@@ -11,6 +11,23 @@
 }
 
 /* общие стили */
+
+#element::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#element::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: var(--thirdColor);
+    border-radius: 10px;
+}
+
+#element::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--secondColor);
+}
+
 body {
     background: var(--firstColor);
     font-family: 'Segoe UI';
@@ -141,7 +158,9 @@ header nav {
 
 .hero-btn img {
     width: 20px;
+    max-height: 20px;
     margin-right: 10px;
+    margin-top: 3px;
 }
 
 
@@ -193,7 +212,7 @@ footer span {
 
 /* страница тестов */
 
-.tests h1 {
+.tests h1, .lesson h1 {
     margin-top: 300px;
     margin-bottom: 150px;
 }
@@ -207,4 +226,32 @@ footer span {
 
 .final-test-img {
     max-width: 585px;
+}
+
+
+/* Страница урока */
+
+.lesson h2 {
+    margin-bottom: 50px;
+}
+
+.lesson p {
+    margin: 50px 0;
+}
+
+.listing-container {
+    border-radius: 8px;
+    border: 2px solid #495057;
+    background: #1B1F22;
+    padding: 60px 0px;
+}
+
+.code pre {
+    color: #FFF;
+    font-family: Consolas;
+    font-size: 26px;
+}
+
+.lesson-btns {
+    padding: 150px 0;
 }
