@@ -6,28 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Урок 1 Установка Bootstrap</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
 </head>
 
-<body id="element">
+<body class="scroll">
     <header>
         <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
-            <div class="fixed-top nav-fixed-bg ">
-                <nav class="navbar navbar-expand-lg ">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <div class="col-1">
                             <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
                         </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
                             <div class="navbar-nav col-lg-8 d-flex justify-content-between">
                                 <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
                                 <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
-                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a>
-                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/download/">Скачать Bootstrap</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
                             </div>
                         </div>
                     </div>
@@ -68,9 +70,11 @@
                     </p>
 
                     <div class="listing-container col-10 m-auto">
-                        <div class="code col-10 m-auto">
-<pre id="element"><code>    
-&lt!DOCTYPE html>
+
+                        <div class="col-12 text-end" onclick="copyFunc()" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        
+                        <div class="code col-12 m-auto">
+<pre><code id="listing-1" class="language-html scroll">&lt!DOCTYPE html>
 &lthtml lang="en">
 &lthead>
     &ltmeta charset="UTF-8">
@@ -86,6 +90,7 @@
 
 </code></pre>
                         </div>
+                        
                     </div>
 
                     <p class="col-12">
@@ -136,7 +141,40 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc() {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById('listing-1').innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                        type: 'warning',
+                        timeout: 10000,
+                        text: 'У вас заблокирован доступ к буферу обмена...',
+                    }).show();
+            }
+        }
+    </script>
 </body>
 
 </html>
