@@ -4,30 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тесты</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/shortcut.svg" type="image/x-icon">
+    <title>Урок 1 Установка Bootstrap</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
 </head>
 
-<body id="element">
+<body class="scroll">
     <header>
         <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
             <div class="fixed-top nav-fixed-bg">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <div class="col-1">
-                            <a href="index.html"><img src="images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
                         </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
                             <div class="navbar-nav col-lg-8 d-flex justify-content-between">
-                                <a class="p-3 p-lg-0" href="index.html#lessons">Уроки</a>
-                                <a class="p-3 p-lg-0" href="tests.html">Тесты</a>
-                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a>
-                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/download/">Скачать Bootstrap</a>
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
                             </div>
                         </div>
                     </div>
@@ -57,7 +59,7 @@
                         Distinctio maxime sequi tenetur similique, voluptatem delectus quae labore accusantium sint illo reprehenderit ab officiis ipsum repellat, pariatur sed totam. Temporibus neque excepturi eum facilis sit numquam at necessitatibus iste.
                     </p>
 
-                    <img src="images/lesson-1-imgs/image 1.png" alt="download-button" class="col-12 col-md-6 m-auto">
+                    <img src="../images/lesson-1-imgs/image 1.png" alt="download-button" class="col-12 col-md-6 m-auto p-0 lesson-img">
                     
                     <p class="col-12">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus saepe eveniet quos! Laborum, error saepe? Eveniet minima commodi consequatur aperiam odit nihil, quae distinctio nobis libero exercitationem expedita enim accusamus!
@@ -68,9 +70,9 @@
                     </p>
 
                     <div class="listing-container col-10 m-auto">
-                        <div class="code col-10 m-auto">
-<pre id="element"><code data-language="html" >    
-&lt!DOCTYPE html>
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&lt!DOCTYPE html>
 &lthtml lang="en">
 &lthead>
     &ltmeta charset="UTF-8">
@@ -85,7 +87,7 @@
 &lt/html>
 
 </code></pre>
-                        </div>
+                        </div> 
                     </div>
 
                     <p class="col-12">
@@ -95,16 +97,16 @@
                     </p>
 
                     <div class="lesson-btns col-12 col-lg-8 m-auto">
-                        <div class="row p-3 p-lg-0 ms-xl-0 ms-lg-1 d-flex justify-content-between">
-                            <a href="#lessons" class="col-xl-5 col-md-5 col-sm-12 mb-3 p-0 ">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="lesson-2.html" class="col-md-5">
                                 <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
-                                    <img src="images/next.svg" alt="book"> Следующий урок
+                                    <img src="../images/next.svg" alt="book"> Следующий урок
                                 </div>
                             </a>
                             
-                            <a href="tests.html" class="col-xl-5 col-md-5 col-sm-12 mb-3 me-lg-5 p-0">
+                            <a href="../tests/test-1.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
                                 <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
-                                    <img src="images/book-half-test.svg" alt="book">Перейти к тесту
+                                    <img src="../images/book-half-test.svg" alt="book">Перейти к тесту
                                 </div>
                             </a>
                         </div>
@@ -136,7 +138,40 @@
             </div>
         </div>
     </footer>
-    <script src="js/bootstrap.min.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                        type: 'warning',
+                        timeout: 10000,
+                        text: 'У вас заблокирован доступ к буферу обмена...',
+                    }).show();
+            }
+        }
+    </script>
 </body>
 
 </html>
