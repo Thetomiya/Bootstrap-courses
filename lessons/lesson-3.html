@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3 Столбцы и строки</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="lesson">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center ">Урок 3 Столбцы и строки</h1>
+                    <h2 class="col-12 col-lg-6">Для чего нужны строки и столбцы?</h2>
+                   
+                    <p>
+                        Строки (rows) и столбцы (columns) являются основными строительными блоками в Bootstrap 5, которые позволяют правильно организовать и распределить элементы веб-страницы.
+                    </p>
+                    
+                    <p>
+                        Строки (rows):
+                    </p>
+
+                    <ul>
+                        <li>
+                            Обеспечивают базовую структуру веб-страницы, позволяя упорядочить элементы по вертикали.
+                        </li>
+                        <li>
+                            Каждая строка должна быть обернута в тег.
+                        </li>
+                        <li>
+                            По умолчанию каждая строка имеет 100% ширину и растягивается на всю ширину родительского элемента.
+                        </li>
+                        <li>
+                            Вы можете добавить класс <code>.flex</code> для каждой строки, чтобы сделать ее гибкой и адаптивной к различным размерам экрана.
+                        </li>
+                        <li>
+                            Внутри каждой строки вы можете использовать столбцы (columns), чтобы упорядочить и распределить элементы по горизонтали.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Столбцы (columns):
+                    </p>
+
+                    <ul>
+                        <li>
+                            Являются основными элементами, используемыми для упорядочивания содержимого страницы по горизонтали внутри строки.
+                        </li>
+                        <li>
+                            Каждый столбец должен быть обернут в тег.
+                        </li>
+                        <li>
+                            Столбцы могут быть разной ширины, от самых узких (класс <code>.col-12</code>) до самых широких (класс <code>.col</code>).
+                        </li>
+                    </ul>
+
+                    <h3>Что в итоге получается?</h3>
+
+                    <p>
+                        Чтобы создать простейшую вёрстку на bootstrap, нам придётся во-первых: создать в теле документа контейнер: <code>&ltdiv class="container"> &lt/div></code>
+                    </p>
+
+                    <p>
+                        Внутри контейнера создать строчку: <code>&ltdiv class="row"> &lt/div></code>
+                    </p>
+
+                    <p>
+                        И уже строку можно разделять на колонки: <code>&ltdiv class="col"> &lt/div></code>
+                    </p>
+
+                    <p>
+                        В итоге мы имеем следующий код в теле документа:
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&ltbody>
+    &ltdiv class="container text-center">
+        &ltdiv class="row">
+            &ltdiv class="col">
+                Column
+            &lt/div>
+            &ltdiv class="col">
+                Column
+            &lt/div>
+            &ltdiv class="col">
+                Column
+            &lt/div>
+        &lt/div>
+    &lt/div>
+&lt/body>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        В приведенном выше примере создаются три столбца одинаковой ширины для всех устройств и окон просмотра с использованием наших предопределенных классов сетки. Эти столбцы центрируются на странице вместе с родительским элементом .container.
+                    </p>
+
+                    <img src="../images/lesson-3-imgs/cols-example.png" alt="cols-example" class="col-12 col-md-8 mt-5 lesson-img">
+
+                    <p>
+                        Контейнеры центрируют и дополняют ваш контент по горизонтали. Используйте .containerдля адаптивной ширины пикселей <code>.container-fluid</code> для <code>width: 100%</code> всех окон просмотра и устройств или адаптивного контейнера (например, <code>.container-md</code> ) для комбинации гибкой ширины и ширины пикселей.
+                    </p>
+
+                    <p>
+                        Строки - это обертка для столбцов. Каждый столбец имеет горизонтальный padding (так называемый gutter) для контроля пространства между колонками.
+                    </p>
+
+                    <p>
+                        Колонки невероятно гибкие. В каждой строке доступно 12 колонок, что позволяет создавать различные комбинации элементов, охватывающих любое количество колонок. Классы столбцов указывают на количество столбцов шаблона (например, <code>col-4</code> - четыре). Ширина задается в процентах, поэтому вы всегда будете иметь одинаковый относительный размер.
+                    </p>
+
+                    <h3>Установка ширины одного столбца</h3>
+
+                    <p>
+                        Автоматическая компоновка для столбцов сетки flexbox также означает, что вы можете установить ширину одного столбца и автоматически изменять размер соседних столбцов вокруг него. Вы можете использовать предопределенные классы сетки (как показано ниже), примеси сетки или встроенную ширину. Обратите внимание, что размеры других столбцов будут меняться независимо от ширины центрального столбца.
+                    </p>
+
+                    <img src="../images/lesson-3-imgs/cols-example-2.png" alt="cols-example-2" class="col-12 col-md-8 mt-5 lesson-img">
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_2" class="language-html scroll">&ltdiv class="container text-center">
+    &ltdiv class="row">
+        &ltdiv class="col">
+            1 of 3
+        &lt/div>
+        &ltdiv class="col-6">
+            2 of 3 (wider)
+        &lt/div>
+        &ltdiv class="col">
+            3 of 3
+        &lt/div>
+    &lt/div>
+    &ltdiv class="row">
+        &ltdiv class="col">
+            1 of 3
+        &lt/div>
+        &ltdiv class="col-5">
+            2 of 3 (wider)
+        &lt/div>
+        &ltdiv class="col">
+            3 of 3
+        &lt/div>
+    &lt/div>
+&lt/div>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        Вот так вы можете настраивать ширину отображения вашего контента.
+                    </p>
+
+                    
+                    <div class="lesson-btns col-12 col-lg-8 m-auto">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="lesson-4.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book"> Следующий урок
+                                </div>
+                            </a>
+                            
+                            <a href="../tests/test-2.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book">Перейти к тесту
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p>Bootstrap</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Docs</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Examples</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Icons</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Themes</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Blog</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 mt-lg-0 mt-5 d-flex flex-column">
+                    <p>Author</p>
+                    <span>Киценко И. В. ИСПВ-02</span>
+                    <span>Ilyakitsenko@proton.me</span>
+                    <span>2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                    type: 'warning',
+                    timeout: 10000,
+                    text: 'У вас заблокирован доступ к буферу обмена...',
+                }).show();
+            }
+        }
+    </script>
+</body>
+
+</html>

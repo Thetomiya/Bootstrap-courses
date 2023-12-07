@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 4 Адаптивные колонки и flex-классы</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="lesson">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center ">Урок 4 Адаптивные колонки и flex-классы</h1>
+                    <h2 class="col-12 col-lg-8">Изменение колонок в зависимости от ширины экрана</h2>
+                   
+                    <p>
+                        Ширина ваших колонок, с классом <code>.col</code> уже будет изменяться вместе с изменение ширины вашего экрана. Но если вам надо, чтобы определённый элемент имел различную ширину в зависимости от устройства, вы можете настроить это с помощью определённых классов колонок, реагирующих на уже известные нам точки останова. Например, вы можете сделать так, что элемент занимает половину доступного контейнера на широких устройствах, и полный контейнер.
+                    </p>
+                    
+                    <h3>
+                        В качестве примера, рассмотрим непосредственно этот сайт.
+                    </h3>
+
+                    <p>
+                        В первом уроке у нас есть отличный пример.
+                    </p>
+
+                    <img class="col-12 col-md-8 lesson-img" src="../images/lesson-4-imgs/img-adaptive-1.png" alt="img-adaptive">
+
+                    <p>
+                        На десктопных экранах эта картинка занимает всего 550 пикселей и 5 колонок в ширину. Но если вы будете просматривать эту страницу с телефона, то эта картинка растянется на все 12 колонок:
+                    </p>
+
+                    <img class="col-12 col-md-5 lesson-img" src="../images/lesson-4-imgs/img-adaptive-2.png" alt="img-adaptive">
+
+                    <p>
+                        Вот на этом и строится весь адаптив bootstrap. Вы можете просто настроить сколько каждый элемент может занимать пространства, в зависимости от ширины. Вот как выглядит код, отвечающий за эту картинку:
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&ltimg class="col-12 col-md-5 lesson-img" src="../images/lesson-1-imgs/image 1.png" alt="download-link">
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        Всё что я сделал - это придал элементу следующие классы: <code>col-12 col-md-5</code>. Тут всё построено следующим образом: Элемент всегда занимает 12 колонок ширины. Но при условии, когда ширина экрана больше, или равна md, то есть 768 пикселей, элемент занимает 5 колонок ширины.
+                    </p>
+
+                    <p>
+                        Всё из за логики mobile first. В моём примере <code>col-12</code> - это стандартная ширина элемента, то есть ширина для мобильных устройств. и поэтому, мне пришлось добавить класс с контрольной точкой <code>col-md-5</code> для того, что бы на десктопных экранах этот элемент не был во всю ширину, ибо это не имеет смысла.
+                    </p>
+
+                    <p>Но что делать, если обычного выравнивания шириной не достаточно? в таком случае не стоит спешить и писать свои собственные CSS стили. Bootstrap уже всё продумал.</p>
+
+                    <h3>Flex-классы в Bootstrap</h3>
+
+                    <p>
+                        Я надеюсь вы уже знакомы с flexbox контейнерами в обычном CSS, потому что понимая их, вы легко поймёте и логику самого bootstrap. И когда нужно выровнять что то по всей ширине контейнера, карточки товаров, или например шапку, никто не выручает так сильно как flexbox'ы. И вам не требуется отдельно прописывать flex стили в вашем CSS. Вы можете точно так же прописать <code>display:flex</code> или <code>justify-content</code> Непосредственно в классах ваших элементов. И даже больше, вам не придётся делать лишние media запросы, если вы хотите делать flex элементы только на определённых экранах.
+                    </p>
+
+                    <p>
+                        Примените <code>display</code>  утилиты для создания контейнера flexbox и преобразуйте прямые дочерние элементы в элементы flex. Flex-контейнеры и элементы можно дополнительно модифицировать с помощью дополнительных гибких свойств.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_2" class="language-html scroll">&ltdiv class="d-flex">I'm a flexbox container!&lt/div>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <img class="col-12 col-md-8 lesson-img mb-5" src="../images/lesson-4-imgs/flex-1.png" alt="img-adaptive">
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_3" class="language-html scroll">&ltdiv class="d-inline-flex">I'm an inline flexbox container!&lt/div>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <img class="col-12 col-md-5 lesson-img" src="../images/lesson-4-imgs/flex-2.png" alt="img-adaptive">
+                    
+                    <p>
+                        Адаптивные варианты также существуют для <code>.d-flex</code> и <code>.d-inline-flex</code>:
+                    </p>
+
+                    <ul>
+                        <li><code>.d-flex</code></li>
+                        <li><code>.d-inline-flex</code></li>
+                        <li><code>.d-sm-flex</code></li>
+                        <li><code>.d-sm-inline-flex</code></li>
+                        <li><code>.d-md-flex</code></li>
+                        <li><code>.d-md-inline-flex</code></li>
+                        <li><code>.d-lg-flex</code></li>
+                        <li><code>.d-lg-inline-flex</code></li>
+                        <li><code>.d-xl-flex</code></li>
+                        <li><code>.d-xl-inline-flex</code></li>
+                        <li><code>.d-xxl-flex</code></li>
+                        <li><code>.d-xxl-inline-flex</code></li>
+                    </ul>
+
+                    <p>
+                        Вы придаёте эти свойства родительскому контейнеру, и у вас уже есть готовый flex контейнер. В разы меньше кода, чем если бы вы это делали в CSS, не так ли?
+                    </p>
+
+                    <p>
+                        И с выравниванием дочерних элементов всё так же просто. всего лишь нужно придать контейнеру нужный вас стиль, будь то <code>.flex-row-reverse</code>, <code>.justify-content-sm-center</code> или <code>.align-items-lg-start</code>. Я думаю вы уже поняли что стилей тут так же много, как и в списке выше. Для каждого, например, <code>align-items-end</code> существует ещё много вариаций с контрольными точками, которые нет смысла описывать, ибо и так логика понятна: есть свойство, и есть это же свойство с префиксом или постфиксом с шириной, например <code>.flex-sm-nowrap</code>. С полным списком и примерами можно ознакомиться в документации. Ссылка в шапке.
+                    </p>
+                    
+                    <h3>Padding и Margin</h3>
+
+                    <p>
+                        Не менее важные свойства, с которыми мы так или иначе взаимодействуем всегда - это внешние и внутренние отступы. И не смотря на то, как они важны, я лишь немного опишу их, ибо работают они точно так же как и в примере с flex, и понять логику можно почти мгновенно.
+                    </p>
+
+                    <p>
+                        Margin и padding задаются классами <code>m-5</code> и <code>p-5</code> соответственно. Но измеряются отступы не в пикселях, а в rem. От .25rem До 3rem, Следовательно от <code>m-1</code> до <code>m-5</code>. Есть ещё конечно <code>m-0</code>, который очевидно убирает отступ. А так же есть классы <code>mt-5</code> или <code>mb-0</code>, отвечающие конкретно за отступы сверху и снизу. За отступы же по бокам отвечает <code>ms-1</code> слева, и <code>me-1</code> справа. Логика тут простая. ms - это margin-start, а me - это margin-end. Так же стоит упомянуть про <code>m-auto</code>, который выравнивает дочерний элемент по центру.
+                    </p>          
+                    
+                    <p>
+                        И конечно же не обошлось без контрольных точек. У нас есть замечательные классы <code>m-lg-5</code> или например <code>p-sm-auto</code> для выравниваний в зависимости от ширины экрана.
+                    </p>
+
+                    <h3>Итог</h3>
+
+                    <p>
+                        В заключении, чтобы разом показать вам всё изученное, рассмотрим следующий пример:
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_4')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_4" class="language-html scroll">&ltdiv class="d-flex align-items-start flex-column mb-3" style="height: 200px;">
+    &ltdiv class="mb-auto p-2">Flex item&lt/div>
+    &ltdiv class="p-2">Flex item&lt/div>
+    &ltdiv class="p-2">Flex item&lt/div>
+&lt/div>
+  
+&ltdiv class="d-flex align-items-end flex-column mb-3" style="height: 200px;">
+    &ltdiv class="p-2">Flex item&lt/div>
+    &ltdiv class="p-2">Flex item&lt/div>
+    &ltdiv class="mt-auto p-2">Flex item&lt/div>
+&lt/div>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <img class="col-12 col-md-7 lesson-img mb-5" src="../images/lesson-4-imgs/flex-3.png" alt="img-adaptive">
+
+                    <p>
+                        Как видно, в этом примере используются классы <code>d-flex align-items-end flex-column</code> для выравнивания в первом контейнере, и <code>mb-3</code> для отступа между 1 и 2 контейнерами
+                    </p>
+
+
+                    <div class="lesson-btns col-12 col-lg-8 m-auto">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="lesson-4.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book"> Следующий урок
+                                </div>
+                            </a>
+                            
+                            <a href="../tests/test-2.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book">Перейти к тесту
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p>Bootstrap</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Docs</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Examples</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Icons</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Themes</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Blog</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 mt-lg-0 mt-5 d-flex flex-column">
+                    <p>Author</p>
+                    <span>Киценко И. В. ИСПВ-02</span>
+                    <span>Ilyakitsenko@proton.me</span>
+                    <span>2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                    type: 'warning',
+                    timeout: 10000,
+                    text: 'У вас заблокирован доступ к буферу обмена...',
+                }).show();
+            }
+        }
+    </script>
+</body>
+
+</html>
