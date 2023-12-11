@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 5 Изображения и таблицы</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="lesson">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-left ">Урок 5 Изображения и таблицы</h1>
+                    <h2 class="col-12 col-lg-8">Адаптивные изображения</h2>
+                   
+                    <p>
+                        Изображения в Bootstrap становятся адаптивными с помощью класса <code>.img-fluid</code>. Он применяет <code>max-width: 100%;</code> и <code>height: auto;</code> к изображению, так что оно масштабируется в соответствии с шириной родительского элемента.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&ltimg src="..." class="img-fluid" alt="...">
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <h3>Выравнивание изображений</h3>
+                    
+                    <p>
+                        <code>block</code> изображения можно центрировать с помошью классов margin utility. Например <code>.float-start</code>, <code>.float-end</code> или <code>.mx-auto</code> для центрирования слева, справа и по центру соответственно. Не забудьте так же прописать класс <code>.d-block</code>
+                    </p>
+
+                    <p>
+                        Либо можно использовать следующую конструкцию, разместив изображение в контейнере с классами <code>.text-center</code> <code>.text-left</code> или <code>.text-right</code> :
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_2" class="language-html scroll">&ltdiv class="text-center">
+    &ltimg src="..." alt="...">
+&lt/div>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <h3>Figure</h3>
+
+                    <p>
+                        Если вы хотите разместить в своём документе картинку с подписью с помошью конструкции <code>&ltfigure&gt</code>, используйте включённые в bootstrap классы <code>.figure</code> <code>.figure-img</code> и <code>.figure-caption</code> для придания некоторых базовых стилей HTML5 элементам.
+                    </p>
+
+                    <p>
+                        Изображения в <code>&ltfigure&gt</code> не имеют явного размера, поэтому убедитесь что вы добавили класс <code>.img-fluid</code> для вашего <code>&ltimg&gt</code> элемента, чтобы сделать его адаптивным.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_3" class="language-html scroll">&ltfigure class="figure">
+    &ltimg src="..." class="figure-img img-fluid rounded" alt="...">
+    &ltfigcaption class="figure-caption text-end">A caption for the above image.&lt/figcaption>
+&lt/figure>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        Ниже приведён результат исполнения кода, с добавлением некоторых стилей для большей наглядности. 
+                    </p>
+
+                    <img class="col-12 col-md-5 lesson-img mb-5" src="../images/lesson-5-imgs/figure.png" alt="figure-image">
+
+
+                    <h3>Таблицы</h3>
+
+                    <p>
+                        Из-за широкого использования <code>&lttable&gt</code>элементов в сторонних виджетах, таких как календари и средства выбора дат, таблицы bootstrap являются опциональными при подключении фреймворка. Убедитесь что в случае использования таблиц bootstrap, в вашем проекте не возникнет конфликтов с другими фреймворками или библиотеками.
+                    </p>
+
+                    <p>
+                        Добавьте базовый класс <code>.table</code> в любой <code>&lttable&gt</code>, а затем расширьте его с помощью дополнительных классов-модификаторов или пользовательских стилей. Все стили таблиц не наследуются в Bootstrap, то есть любые вложенные таблицы могут иметь стиль, независимый от родительской таблицы.
+                            
+                    </p>
+                    
+                    <p>
+                        Используя самую простую разметку таблиц, вы можете увидеть, как <code>.table</code> таблицы выглядят в bootstrap:
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_4')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_4" class="language-html scroll">&lttable class="table">
+    &ltthead>
+        &lttr>
+            &ltth scope="col">#&lt/th>
+            &ltth scope="col">Имя&lt/th>
+            &ltth scope="col">Фамилия&lt/th>
+            &ltth scope="col">Почта&lt/th>
+        &lt/tr>
+    &lt/thead>
+    &lttbody>
+        &lttr>
+             &ltth scope="row">1&lt/th>
+             &lttd>Марк&lt/td>
+             &lttd>Отто&lt/td>
+             &lttd>mark@gmail.com&lt/td>
+        &lt/tr>
+        &lttr>
+            &ltth scope="row">2&lt/th>
+            &lttd>Джейкоб&lt/td>
+            &lttd>Торнтон&lt/td>
+            &lttd>jacob@yahoo.com&lt/td>
+        &lt/tr>
+        &lttr>
+            &ltth scope="row">3&lt/th>
+            &lttd colspan="2">Ларри&lt/td>
+            &lttd>-&lt/td>
+        &lt/tr>
+    &lt/tbody>
+&lt/table>
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        Ниже приведён результат исполнения кода, с добавлением некоторых стилей для большей наглядности. 
+                    </p>
+
+                    <img class="col-12 col-md-8 lesson-img mb-5" src="../images/lesson-5-imgs/table.png" alt="table">
+
+                    <p>
+                        Так же для большей наглядности и интерактивности ваших таблиц можно добавить в тег <code>&lttable&gt</code> классы <code>.table-striped</code> для добавления полосок «зебры» к любой строке таблицы или класс <code>.table-hover</code> чтобы включить состояние наведения на строки таблицы для упрощённого восприятия больших таблиц. А так же классы <code>.table-bordered</code> и <code>.table-borderless</code> для создания или удаления границ в таблице.
+                    </p>
+
+                    <p>
+                        Так же от тега <code>&lttable&gt</code> и <code>&lrtr&gt</code> наследуются свойства классов для выравнивания содержимого ячеек, таких как <code>align-top</code>, <code>align-middle</code> и <code>align-bottom</code>.
+                    </p>
+
+                    <p>
+                        Все эти классы помогают легко создавать адаптивные таблицы и изображения, избавляя разработчика от прописывания лишнего кода стилей. В этом уроке были разобраны лишь базовые вариации работы с изображениями и таблицами в bootstrap. Больше информации вы можете найти в официальной
+                    </p>
+
+                    <div class="lesson-btns col-12 col-lg-8 m-auto">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="../tests/test-5.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book"> Перейти к тесту
+                                </div>
+                            </a>
+                            
+                            <a href="lesson-6.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book">Следующий урок
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p>Bootstrap 5.3.2</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Примеры</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Иконки</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Темы</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Блог</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 d-flex flex-column">
+                    <p>Автор</p>
+                    <span>Киценко И. В.</span>
+                    <span>Ilyakitsenko@proton.me</span>
+                    <span>2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                    type: 'warning',
+                    timeout: 10000,
+                    text: 'У вас заблокирован доступ к буферу обмена...',
+                }).show();
+            }
+        }
+    </script>
+</body>
+
+</html>

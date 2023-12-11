@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 8 Компоненты Bootstrap. Карусель и аккордионы</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="lesson">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-left ">Урок 8 Компоненты Bootstrap. Карусель и аккордионы</h1>
+                    <h2 class="col-12 col-lg-8">Карусель</h2>
+                   
+                    <p>
+                        Слайдер, называемый в Bootstrap каруселью - это слайд-шоу для циклического просмотра серии контента, созданное с помощью 3D-преобразований CSS и небольшого количества JavaScript. Он работает с серией изображений, текста или пользовательской разметки. Он также включает поддержку предыдущих/следующих элементов управления и индикаторов.
+                    </p>
+
+                    <p>
+                        По соображениям производительности карусели необходимо инициализировать вручную с помощью метода конструктора карусели. Без инициализации некоторые прослушиватели событий (в частности, события, требующие поддержки касания/пролистывания) не будут зарегистрированы до тех пор, пока пользователь явно не активирует элемент управления или индикатор.
+                    </p>
+
+                    <p>
+                        Единственным исключением являются автоматически воспроизводимые карусели с <code>data-bs-ride="carousel"</code>атрибутом, поскольку они инициализируются автоматически при загрузке страницы. Если вы используете автоматически воспроизводимые карусели с атрибутом data, не инициализируйте те же карусели явно с помощью метода конструктора.
+                    </p>
+
+                    <p>
+                        Вложенные карусели (слайдер внутри слайдера) не поддерживаются. Вы также должны знать, что карусели в целом часто могут вызывать проблемы с удобством использования и доступностью.
+                    </p>
+
+                    <p>
+                        Карусели не нормализуют автоматически размеры слайдов. Таким образом, вам может потребоваться использовать дополнительные утилиты или пользовательские стили для соответствующего размера контента. Хотя карусели поддерживают элементы управления и индикаторы «Предыдущий/следующий», они не являются обязательными. Добавляйте и настраивайте по своему усмотрению.
+                    </p>
+
+                    <p>
+                        Необходимо добавить класс <code>.active</code>  на один из слайдов, иначе карусель не будет видна. Также обязательно установите уникальный элемент <code>id</code> управления <code>.carousel</code> для дополнительных элементов управления, особенно если вы используете несколько каруселей на одной странице. Элементы управления и индикатора должны иметь <code>data-bs-target</code> атрибут (или <code>href</code> для ссылок), соответствующий атрибуту <code>id</code> элемента <code>.carousel</code>.
+                    </p>
+
+                    <p>
+                        Вот базовый пример карусели с тремя слайдами. Обратите внимание на элементы управления в виде стрелок. Рекомендуется использовать <code>&ltbutton&gt</button></code> элементы, но вы также можете использовать <code>&lta&gt</code> элементы с расширением <code>role="button"</code>.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&lt;div id=&quot;carouselExample&quot; class=&quot;carousel slide&quot;&gt;
+    &lt;div class=&quot;carousel-indicators&quot;&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;0&quot; class=&quot;active&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;1&quot; aria-label=&quot;Slide 2&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;2&quot; aria-label=&quot;Slide 3&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-inner&quot;&gt;
+        &lt;div class=&quot;carousel-item active&quot;&gt;
+            &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExample&quot; data-bs-slide=&quot;prev&quot;&gt;
+        &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;visually-hidden&quot;&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExample&quot; data-bs-slide=&quot;next&quot;&gt;
+        &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;visually-hidden&quot;&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="my-5">
+                        Результат:
+                    </p>
+
+                    <div id="carouselExample" class="carousel slide col-12 col-md-5 mx-auto">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/lesson-8-imgs/slide1.png" class="d-block w-100" alt="slide1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/lesson-8-imgs/slide2.png" class="d-block w-100" alt="slide2">
+                            </div>
+                            <div class="carousel-item" id="slide3">
+                                <img src="../images/lesson-8-imgs/slide3.png" class="d-block w-100" alt="slide3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+          
+                    <h3>Подписи</h3>
+
+                    <p>
+                        Вы можете добавлять подписи к своим слайдам с помощью <code>.carousel-caption</code> элемента внутри любого файла <code>.carousel-item</code>. Их можно легко скрыть на небольших окнах просмотра, как показано ниже, с помощью дополнительных утилит отображения. Сначала мы скрываем их с помощью <code>.d-none</code> и возвращаем на устройствах среднего размера с помощью <code>.d-md-block</code>.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_2" class="language-html scroll">&lt;div id=&quot;carouselExampleCaptions&quot; data-bs-ride=&quot;carousel&quot; class=&quot;carousel slide col-12 col-lg-5 mx-auto&quot;&gt;
+    &lt;div class=&quot;carousel-indicators&quot;&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;0&quot; class=&quot;active&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;1&quot; aria-label=&quot;Slide 2&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;2&quot; aria-label=&quot;Slide 3&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-inner&quot;&gt;
+        &lt;div class=&quot;carousel-item active&quot;&gt;
+            &lt;img src=&quot;../images/lesson-8-imgs/slide1.png&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+            &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+                &lt;p&gt;Some representative placeholder content for the first slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;../images/lesson-8-imgs/slide2.png&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+            &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+                &lt;p&gt;Some representative placeholder content for the second slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img src=&quot;../images/lesson-8-imgs/slide3.png&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+            &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+                &lt;p&gt;Some representative placeholder content for the third slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide=&quot;prev&quot;&gt;
+        &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;visually-hidden&quot;&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide=&quot;next&quot;&gt;
+        &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;visually-hidden&quot;&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="my-5">
+                        Результат:
+                    </p>
+
+                    <div id="carouselExampleCaptions" data-bs-ride="carousel" class="carousel slide col-12 col-lg-5 mx-auto">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/lesson-8-imgs/slide1.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/lesson-8-imgs/slide2.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/lesson-8-imgs/slide3.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                    <p class="my-5">
+                        Вы можете настроить автозапуск каруселей при загрузке страницы, установив опциию <code>data-bs-ride="carousel"</code>.
+                    </p>
+
+                    <h3>Аккордионы</h3>
+
+                    <p>
+                        Чтобы сделать аккордеон складывающимся, в нем используется внутренняя функция <code>collapse</code>. Чтобы отобразить развернутый аккордеон, добавьте класс <code>.open</code> к <code>.accordion</code>.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_3" class="language-html scroll">&lt;div class=&quot;accordion col-12 col-md-5 m-auto&quot; data-bs-theme=&quot;dark&quot; id=&quot;accordionExample&quot;&gt;
+    &lt;div class=&quot;accordion-item&quot;&gt;
+        &lt;span class=&quot;accordion-header&quot;&gt;
+            &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseOne&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapseOne&quot;&gt;
+                Accordion Item #1
+            &lt;/button&gt;
+        &lt;/span&gt;
+        &lt;div id=&quot;collapseOne&quot; class=&quot;accordion-collapse collapse show&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+            &lt;div class=&quot;accordion-body&quot;&gt;
+                &lt;strong&gt;This is the first item&#039;s accordion body.&lt;/strong&gt; It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&#039;s also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-item&quot;&gt;
+        &lt;span class=&quot;accordion-header&quot;&gt;
+            &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseTwo&quot;&gt;
+                Accordion Item #2
+            &lt;/button&gt;
+        &lt;/span&gt;
+        &lt;div id=&quot;collapseTwo&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+            &lt;div class=&quot;accordion-body&quot;&gt;
+                &lt;strong&gt;This is the second item&#039;s accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&#039;s also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-item&quot;&gt;
+        &lt;span class=&quot;accordion-header&quot;&gt;
+            &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseThree&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseThree&quot;&gt;
+                Accordion Item #3
+            &lt;/button&gt;
+        &lt;/span&gt;
+        &lt;div id=&quot;collapseThree&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+            &lt;div class=&quot;accordion-body&quot;&gt;
+                &lt;strong&gt;This is the third item&#039;s accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&#039;s also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="my-5">
+                        Результат:
+                    </p>
+
+                    <div class="accordion col-12 col-md-5 m-auto" data-bs-theme="dark" id="accordionExample">
+                        <div class="accordion-item">
+                            <span class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </span>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <span class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </span>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <span class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </span>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        Добавьте <code>.accordion-flush</code>, чтобы удалить некоторые границы и закругленные углы и отображать аккордеоны от края до края с их родительским контейнером.
+                    </p>
+
+                    <p>
+                        Пропустите атрибут <code>data-bs-parent</code> для каждого элемента <code>.accordion-collapse</code>, чтобы аккордеоны оставались открытыми при открытии другого элемента.
+                    </p>
+
+                    <div class="lesson-btns col-12 col-lg-8 m-auto">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="../tests/test-8.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book"> Перейти к тесту
+                                </div>
+                            </a>
+                            
+                            <a href="lesson-9.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book">Следующий урок
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p>Bootstrap 5.3.2</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Примеры</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Иконки</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Темы</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Блог</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 d-flex flex-column">
+                    <p>Автор</p>
+                    <span>Киценко И. В.</span>
+                    <span>Ilyakitsenko@proton.me</span>
+                    <span>2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                    type: 'warning',
+                    timeout: 10000,
+                    text: 'У вас заблокирован доступ к буферу обмена...',
+                }).show();
+            }
+        }
+    </script>
+</body>
+
+</html>

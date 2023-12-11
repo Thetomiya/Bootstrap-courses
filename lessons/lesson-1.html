@@ -43,8 +43,8 @@
         <section class="lesson">
             <div class="container">
                 <div class="row">
-                    <h1 class="text-center ">Урок 1 Введение и установка Bootstrap</h1>
-                    <h2 class="col-12 col-lg-6">Что такое Bootstrap?</h2>
+                    <h1 class="text-left ">Урок 1 Введение и установка Bootstrap</h1>
+                    <h2 class="col-12 col-lg-6">Что такое Bootstrap</h2>
                    
                     <p>
                         Bootstrap - это фреймворк для создания веб-приложений и сайтов. Он позволяет быстро и легко создавать адаптивные интерфейсы, поддерживает различные устройства и браузеры. Bootstrap включает в себя набор готовых компонентов, таких как кнопки, формы, навигационные панели, таблицы и другие, которые можно использовать для создания своего проекта. Фреймворк также предоставляет инструменты для стилизации и кастомизации элементов интерфейса.
@@ -66,7 +66,7 @@
                     <h3>Установка Bootstrap</h3>
                     
                     <p>
-                        Итак, начнём. У вас имеется только что созданный html файл. Очевидно, чтобы пользоваться bootstrap'ом, нужно его сначала подключить. Сделать это можно тремя основными способами: 
+                        Для начала нам необходим обычный html файл. Для того чтобы пользоваться bootstrap'ом, нужно его сначала подключить к нашему html файлу. Сделать это можно тремя основными способами: 
                     </p>
                     
                     <ul>
@@ -76,23 +76,23 @@
                     </ul>
                     
                     <p>
-                        Тут стоит уточнить, что на момент разработки этого учебного пособия, актуальная версия bootstrap - 5.3.2, Но вы всегда можете найти новейшую версию в ссылке, что находится в шапке сайта. Там же вы найдёте и документацию.
+                        Стоит уточнить, что на момент разработки данного учебного пособия, актуальная версия bootstrap - 5.3.2, Но вы всегда можете найти новейшую версию в ссылке, что находится в шапке сайта. Там же вы найдёте и документацию.
                     </p>
                     
-                    <p>
-                        Итак, поехали, первый способ: 
-                    </p>
+                    <h3>
+                        Подробная инструкция по подключению. Первый способ: 
+                    </h3>
 
                     <p>
-                        1. Перейдите на официальный сайт Bootstrap и скачайте последнюю версию (обычно это архив в формате .zip). Ссылка на скачивание находится на главной странице сайта фреймворка.<br>
+                        1. Перейдите на официальный сайт Bootstrap и скачайте последнюю версию (обычно это архив в формате .zip). Ссылка на скачивание находится на главной странице сайта фреймворка (Выделена красным на изображении ниже).<br>
                         2. Распакуйте архив и скопируйте из него папки css и js в корень вашего проекта. <br>
                         3. Подключите с помощью link к вашему html файлу соответствующие bootstrap'у файлы (я рекомендую подключать bootstrap.min).
                     </p>
 
-                    <img class="col-12 col-md-5 lesson-img" src="../images/lesson-1-imgs/image 1.png" alt="download-link">
+                    <img class="col-12 col-md-5 lesson-img" src="../images/lesson-1-imgs/image1.png" alt="download-link">
                     
                     <p>
-                        В итоге в нашем html файле должна быть следующая картина:
+                        В итоге в нашем html файле должен быть следующий код:
                     </p>
 
                     <div class="listing-container col-10 m-auto">
@@ -129,8 +129,12 @@
                         </div> 
                     </div>
 
+                    <h3>
+                        Третий способ подключения:
+                    </h3>
+
                     <p class="mt-5">
-                        И третий способ - это загрузить bootstrap при помощи npm, и подключить его точно так же, как в 1 способе. <br> Для этого нам понадобится выполнить в командной строке следующую команду:
+                        Третий способ - это загрузить bootstrap при помощи npm, и подключить его точно так же, как в 1 способе. <br> Для этого нам понадобится выполнить в командной строке следующую команду:
                     </p>
 
                     <div class="listing-container col-10 m-auto">
@@ -147,15 +151,15 @@
 
                     <div class="lesson-btns col-12 col-lg-8 m-auto">
                         <div class="row d-flex justify-content-between m-0">
-                            <a href="lesson-2.html" class="col-md-5">
-                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
-                                    <img src="../images/next.svg" alt="book"> Следующий урок
+                            <a href="../tests/test-1.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book"> Перейти к тесту
                                 </div>
                             </a>
                             
-                            <a href="../tests/test-1.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
-                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
-                                    <img src="../images/book-half-test.svg" alt="book">Перейти к тесту
+                            <a href="lesson-2.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book">Следующий урок
                                 </div>
                             </a>
                         </div>
@@ -170,17 +174,17 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="footer-nav col-lg-3 d-flex flex-column">
-                    <p>Bootstrap</p>
-                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Docs</a></span>
-                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Examples</a></span>
-                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Icons</a></span>
-                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Themes</a></span>
-                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Blog</a></span>
+                    <p>Bootstrap 5.3.2</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Примеры</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Иконки</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Темы</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Блог</a></span>
                 </div>
 
                 <div class="footer-nav col-lg-4 d-flex flex-column">
-                    <p>Author</p>
-                    <span>Киценко И. В. ИСПВ-02</span>
+                    <p>Автор</p>
+                    <span>Киценко И. В.</span>
                     <span>Ilyakitsenko@proton.me</span>
                     <span>2023-2024</span>
                 </div>
