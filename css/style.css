@@ -391,6 +391,7 @@ button {
 }
 
 .inmodal-btn {
-    min-width: 250px;
+    width: 250px;
+    min-width: 200px;
     margin: 0 auto;
 }
