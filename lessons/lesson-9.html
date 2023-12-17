@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 9 Карточки и модальные окна</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/highlights.css">
+    <link rel="stylesheet" href="../css/noty.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="../index.html"><img src="../images/logo.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="../index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="../tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="lesson">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-left ">Урок 9 Карточки и модальные окна</h1>
+                    <h2 class="col-12 col-lg-8">Карточки</h2>
+                   
+                    <p>
+                        Карточка — это гибкий и расширяемый контейнер контента. Он включает в себя параметры верхних и нижних колонтитулов, широкий выбор контента, контекстные цвета фона и различные параметры отображения.
+                    </p>
+
+                    <p>
+                        Карты создаются с минимальным количеством разметки и стилей, но при этом обеспечивают массу возможностей управления и настройки. Созданные с помощью flexbox, они обеспечивают легкое выравнивание и хорошо сочетаются с другими компонентами Bootstrap. По умолчанию <code>margin</code> у них нет, поэтому при необходимости используйте его.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_1" class="language-html scroll">&lt;div class=&quot;card p-0&quot; data-bs-theme=&quot;dark&quot; style=&quot;width: 18rem;&quot;&gt;
+    &lt;img src=&quot;../images/lesson-9-imgs/card-img-cap.png&quot; class=&quot;card-img-top&quot; alt=&quot;image-cap&quot;&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+        &lt;p class=&quot;card-title m-0&quot;&gt;Card title&lt;/p&gt;
+        &lt;p class=&quot;card-text&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="mt-5">
+                        Результат:
+                    </p>
+
+                    <div class="card m-auto p-0" data-bs-theme="dark" style="width: 18rem;">
+                        <img src="../images/lesson-9-imgs/card-img-cap.png" class="card-img-top" alt="image-cap">
+                        <div class="card-body">
+                            <p class="card-title m-0">Card title</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <p>
+                        Строительным блоком карты является файл <code>.card-body</code>. Используйте его всякий раз, когда вам нужен мягкий раздел внутри карты.
+                    </p>
+
+                    <p>
+                        Названия карточек используются путем добавления <code>.card-title</code> к <code>&lth*&gt</code> тегу. Таким же образом добавляются и размещаются ссылки рядом друг с другом путем добавления <code>.card-link</code> в тег <code>&lta&gt</code>. 
+                        Субтитры используются путем добавления <code>.card-subtitle</code> к <h*>тегу. Если элементы <code>.card-title</code> и <code>.card-subtitle</code> помещены в <code>.card-body</code>  элемент, заголовок и подзаголовок карты будут хорошо выравниваться.
+                    </p>
+
+                    <p>
+                        <code>.card-img-top</code> помещает изображение вверху карты. С помощью <code>.card-text</code> на карту можно добавить текст. Текст внутри <code>.card-text</code> также можно стилизовать с помощью стандартных HTML-тегов.
+                    </p>
+
+                    <h3>Колонтитулы</h3>
+
+                    <p>
+                        Заголовки карточек можно стилизовать путем добавления <code>.card-header</code> и <code>card-footer</code> к <code>&lth*&gt</code> элементам.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_2" class="language-html scroll">&lt;div class=&quot;card text-center m-auto p-0 col-7&quot; data-bs-theme=&quot;dark&quot;&gt;
+    &lt;div class=&quot;card-header&quot;&gt;
+        Featured
+    &lt;/div&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h5 class=&quot;card-title&quot;&gt;Special title treatment&lt;/h5&gt;
+        &lt;p class=&quot;card-text&quot;&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card-footer text-body-secondary&quot;&gt;
+        2 days ago
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="mt-5">
+                        Результат:
+                    </p>
+
+                    <div class="card text-center m-auto p-0 col-11 col-sm-7" data-bs-theme="dark">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            2 days ago
+                        </div>
+                    </div>
+
+                    <p>
+                        Карты не имеют особых требований <code>width</code>, поэтому их ширина будет 100%, если не указана иное. Вы можете менять её по мере необходимости с помощью вашего CSS, классов сетки, или иных утилит.
+                    </p>
+
+                    <h3>Модальные окна</h3>
+
+                    <p>
+                        Используйте JavaScript-модальный плагин Bootstrap, чтобы добавить на сайт диалоговые окна для лайтбоксов, уведомлений пользователей или полностью пользовательского контента.
+                    </p>
+                
+                    <p>
+                        Прежде чем приступить к работе с модальным компонентом Bootstrap, обязательно прочтите следующее:
+                    </p>
+
+                    <ul>
+                        <li>Модальные окна создаются с помощью HTML, CSS и JavaScript. Они располагаются поверх всего остального в документе и удаляют прокрутку из <code>&ltbody&gt</code>, чтобы вместо нее прокручивалось содержимое модала.</li>
+                        <li>Bootstrap поддерживает только одно модальное окно одновременно. Вложенные модалы не поддерживаются, так как они ухудшают пользовательский опыт.</li>
+                        <li>При нажатии вне модала он автоматически закрывается.</li>
+                        <li>Модалы используют <code>position: fixed</code>, который иногда может быть немного специфичным при отрисовке. По возможности размещайте модальное окно на верхнем уровне HTML, чтобы избежать потенциального вмешательства других элементов. Скорее всего, вы столкнетесь с проблемами при вложении <code>.modal</code> внутри другого фиксированного элемента.</li>
+                        <li>Из-за <code>position: fixed</code> есть некоторые сложности с использованием модалов на мобильных устройствах. Подробности см. в документации по поддержке браузеров.</li>
+                        <li>Из-за того, как HTML5 определяет его семантику, HTML-атрибут <code>autofocus</code> не имеет эффекта в модалах Bootstrap.</li>
+                    </ul>
+
+                    <p>
+                        Ниже приведен пример статического модала (то есть его положение и отображение были переопределены). Включены заголовок модала, тело модала (необходимо для отступа) и нижний колонтитул модала (необязательно).
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_3" class="language-html scroll">&lt;button type=&quot;button&quot; class=&quot;btn  col-md-2 col-6 m-auto btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#exampleModal&quot;&gt;
+    Launch demo modal
+&lt;/button&gt;
+
+&lt;div class=&quot;modal fade&quot; data-bs-theme=&quot;dark&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;h4 class=&quot;modal-title fs-5&quot; id=&quot;exampleModalLabel&quot;&gt;Modal title&lt;/h4&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;span&gt;Modal body text&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p class="mt-5">
+                        Результат:
+                    </p>
+
+                    
+                    <button type="button" class="btn  col-md-2 col-6 m-auto btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+                    
+                    <div class="modal fade" data-bs-theme="dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Modal title</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span>Modal body text</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-5">
+                        Когда модальные окна становятся слишком длинными для области просмотра или устройства пользователя, они прокручиваются независимо от самой страницы. Вы также можете создать прокручиваемое модальное окно, которое позволяет прокручивать тело модального окна, добавив <code>.modal-dialog-scrollable</code> к <code>.modal-dialog</code>.
+                    </p>
+
+                    <p>
+                        Добавьте <code>.modal-dialog-centered</code>, <code>.modal-dialog</code> чтобы вертикально центрировать модальное окно.
+                        Вы так же можете использовать систему сетки Bootstrap в модальном окне, поместив <code>.container-fluid</code> в <code>.modal-body</code>. Тогда вы можете использовать обычные классы системы сеток, как и везде.
+                    </p>
+
+                    <p>
+                        Обязательно добавьте в <code>.modal</code> надпись <code>aria-labelledby="..."</code>, ссылающуюся на заголовок модального диалога. Кроме того, вы можете дать описание модального диалога с помощью <code>aria-describedby</code> в <code>.modal</code>. Обратите внимание, что вам не нужно добавлять <code>role="dialog"</code>, поскольку мы уже добавили его с помощью JavaScript.
+                    </p>
+
+                    <p>
+                        Модальные окна имеют три дополнительных размера, доступных через классы-модификаторы, которые можно поместить в <code>.modal-dialog</code>. Эти размеры срабатывают в определенных контрольных точках, чтобы избежать горизонтальных полос прокрутки на узких экранах просмотра.
+                    </p>
+
+                    <div class="listing-container col-10 m-auto">
+                        <div class="col-12 text-end" onclick="copyFunc('listing_4')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
+                        <div class="code col-12 m-auto">
+<pre><code id="listing_4" class="language-html scroll">&lt;div class=&quot;modal-dialog modal-xl&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;modal-dialog modal-lg&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;modal-dialog modal-sm&quot;&gt;...&lt;/div&gt;
+</code></pre>
+                        </div> 
+                    </div>
+
+                    <p>
+                        Еще одним переопределением является возможность отображения модального окна, закрывающего область просмотра пользователя, доступного через классы модификаторов, размещенные в <code>.modal-dialog</code>.
+                    </p>
+
+                    <p>
+                        То есть например с классом <code>class="modal-dialog modal-fullscreen-sm-down"</code>, модальное окно будет открываться в полный экран только на экранах, шириной sm и меньше. На остальных же экранах окно будет иметь стандартные размеры.
+                    </p>
+
+                </div>
+
+                <div class="row">
+                    <div class="lesson-btns col-12 col-lg-8 m-auto">
+                        <div class="row d-flex justify-content-between m-0">
+                            <a href="../tests/test-9.html" class="col-md-5">
+                                <div class="w-100 hero-btn hero-btn-second d-flex align-items-center justify-content-center">
+                                    <img src="../images/book-half-test.svg" alt="book"> Перейти к тесту
+                                </div>
+                            </a>
+                            
+                            <a href="lesson-10.html" class="col-xl-5 col-md-5 mt-md-0 mt-4 col-sm-12 ">
+                                <div class="w-100 hero-btn hero-btn-first d-flex align-items-center justify-content-center">
+                                    <img src="../images/next.svg" alt="book">Следующий урок
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p>Bootstrap 5.3.2</p>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a></span>
+                    <span><a target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Примеры</a></span>
+                    <span><a target="_blank" href="https://icons.getbootstrap.com/">Иконки</a></span>
+                    <span><a target="_blank" href="https://themes.getbootstrap.com/">Темы</a></span>
+                    <span><a target="_blank" href="https://blog.getbootstrap.com/">Блог</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 d-flex flex-column">
+                    <p>Автор</p>
+                    <span>Киценко И. В.</span>
+                    <span>Ilyakitsenko@proton.me</span>
+                    <span>2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="../js/noty.min.js"></script>
+
+    <script>
+        function copyFunc(id) {
+            if (navigator.clipboard) {
+                let copyText = document.getElementById(id).innerText
+                navigator.clipboard.writeText(copyText).then(function() {
+                    new Noty({
+                        type: 'success',
+                        timeout: 1000,
+                        text: 'Код скопирован.',
+                    }).show();
+                }, function(err) {
+                    new Noty({
+                        type: 'error',
+                        timeout: 10000,
+                        text: 'Ошибка копирования. Возможно нет прав доступа к буферу обмена. ',
+                    }).show();
+                });
+            } else {
+                new Noty({
+                    type: 'warning',
+                    timeout: 10000,
+                    text: 'У вас заблокирован доступ к буферу обмена...',
+                }).show();
+            }
+        }
+    </script>
+</body>
+
+</html>

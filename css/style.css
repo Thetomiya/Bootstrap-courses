@@ -257,20 +257,18 @@ footer a:hover {
 }
 
 
-/* страница тестов */
+/* Страница урока */
 
-.tests h1 {
-    margin-top: 300px;
-    margin-bottom: 150px;
-}
-
-.lesson h1 {
+.lesson h1, .test-section h1 {
     margin-top: 200px;
     margin-bottom: 50px;
     text-align: left;
 }
 
-/* Страница урока */
+.tests h1 {
+    margin-top: 300px;
+    margin-bottom: 150px;
+}
 
 .lesson h2 {
     margin: 70px 0 30px 0;
@@ -323,4 +321,76 @@ footer a:hover {
     margin-right: 0px;
 }
 
+iframe {
+    resize: both;
+    min-width: 260px;
+    max-width: 100%;
+    min-height: 660px;
+    max-height: 1000px;
+}
 
+.accordion-item h2 {
+    margin: 0;
+}
+
+/* Страница тестирования */
+
+.question {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.question h2{
+    margin: 100px 0 50px 0;
+}
+
+.question label {
+    margin: 10px 0;
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 38px;
+    font-size: 22px;
+	border: 1px solid var(--secondColor);
+	border-radius: 6px;
+	user-select: none;
+    max-width: 450px;
+    transition: .4s;
+}
+
+.question input[type=radio]:hover + label {
+	background: var(--secondColor);
+}
+
+.question input[type=radio]:checked + label {
+	background: var(--secondColor);
+}
+
+button {
+    color: white;
+}
+
+.modal-content {
+    background-color: #212529;
+    border: 1px solid var(--secondColor);
+    width: 600px;
+    height: 300px;
+}
+
+.modal-body p {
+    font-size: 38px;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+.inmodal-btn {
+    min-width: 250px;
+    margin: 0 auto;
+}

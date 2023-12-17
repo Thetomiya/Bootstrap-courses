@@ -53,7 +53,7 @@
                         Bootstrap использует гибкую сеточную систему для организации элементов на странице. Сеточная система состоит из колонок, которые могут быть разного размера и занимать разное количество мест на странице.
                     </p>
                     
-                    <img class="col-12 col-md-8 lesson-img" src="../images/lesson-2-imgs/grid.png" alt="grid">
+                    <img class="col-11 col-md-8 lesson-img" src="../images/lesson-2-imgs/grid.png" alt="grid">
                     
                     <p>
                         Первое, что нужно знать про работу bootstrap - это контрольные точки, или же Breakpoints (точки останова).
@@ -75,7 +75,7 @@
                         Bootstrap включает шесть точек останова по умолчанию, также называемых контрольными точками для адаптивного построения. Эти точки останова можно настроить, если вы используете исходные файлы Sass.
                     </p>
 
-                    <img class="col-12 col-md-8 lesson-img" src="../images/lesson-2-imgs/breakpoints.png" alt="breakpoints">
+                    <img class="col-11 col-md-8 lesson-img" src="../images/lesson-2-imgs/breakpoints.png" alt="breakpoints">
 
                     <h3 class="pt-5">Контейнеры</h3>
                     <p>
@@ -101,7 +101,7 @@
                         </li>
                     </ul>
 
-                    <img class="col-12 col-md-9 mt-5 lesson-img" src="../images/lesson-2-imgs/container-breakpoints.png" alt="container-breakpoints">
+                    <img class="col-11 col-md-9 mt-5 lesson-img" src="../images/lesson-2-imgs/container-breakpoints.png" alt="container-breakpoints">
 
                    
                     <h3>Контейнер по умолчанию</h3>
@@ -112,27 +112,26 @@
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_1" class="language-html scroll">&ltdiv class="container">
+<pre><code id="listing_1" class="language-html scroll">&ltdiv class="container"&gt
     &lt!-- Content here --&gt
-&lt/div>
-
+&lt/div&gt
 </code></pre>
                         </div> 
                     </div>
 
                     <h3>Адаптивные контейнеры</h3>
                     <p>
-                        Адаптивные контейнеры позволяют указать класс шириной 100 % до тех пор, пока не будет достигнута указанная точка останова, после чего мы применяем <code>max-width</code>  для каждой из более высоких точек останова. Например, <code>.container-sm</code>ширина начинается с 100 %, пока <code>sm</code> не будет достигнута точка останова, после чего масштабирование будет увеличиваться с помощью <code>md lg xl</code> и <code>xxl</code>.
+                        Адаптивные контейнеры позволяют указать класс шириной 100 % до тех пор, пока не будет достигнута указанная точка останова, после чего мы применяем <code>max-width</code>  для каждой из более высоких точек останова. Например, <code>.container-sm</code> ширина начинается с 100 %, пока <code>sm</code> не будет достигнута точка останова, после чего масштабирование будет увеличиваться с помощью <code>md lg xl</code> и <code>xxl</code>.
                     </p>
 
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_2" class="language-html scroll">&ltdiv class="container-sm">100% wide until small breakpoint&lt/div>
-&ltdiv class="container-md">100% wide until medium breakpoint&lt/div>
-&ltdiv class="container-lg">100% wide until large breakpoint&lt/div>
-&ltdiv class="container-xl">100% wide until extra large breakpoint&lt/div>
-&ltdiv class="container-xxl">100% wide until extra extra large breakpoint&lt/div>
+<pre><code id="listing_2" class="language-html scroll">&ltdiv class="container-sm"&gt100% wide until small breakpoint&lt/div&gt
+&ltdiv class="container-md"&gt100% wide until medium breakpoint&lt/div&gt
+&ltdiv class="container-lg"&gt100% wide until large breakpoint&lt/div&gt
+&ltdiv class="container-xl"&gt100% wide until extra large breakpoint&lt/div&gt
+&ltdiv class="container-xxl"&gt100% wide until extra extra large breakpoint&lt/div&gt
 
 </code></pre>
                         </div> 
@@ -147,9 +146,9 @@
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_3" class="language-html scroll">&ltdiv class="container-fluid">
+<pre><code id="listing_3" class="language-html scroll">&ltdiv class="container-fluid"&gt
     &lt!-- Content here --&gt
-&lt/div>
+&lt/div&gt
 
 </code></pre>
                         </div> 

@@ -27,7 +27,7 @@ pre code.hljs {
   padding: 1em
 }
 code.hljs {
-
+  
 }
 /* end baseline CSS */
 .hljs {
@@ -64,7 +64,7 @@ code.hljs {
 .hljs-meta .hljs-keyword,
 .hljs-doctag,
 .hljs-name {
-  font-weight: bold
+  color: #CE916A
 }
 /* User color: hue: 0 */
 .hljs-type,

@@ -58,13 +58,13 @@
                         В первом уроке есть отличный пример:
                     </p>
 
-                    <img class="col-12 col-md-8 lesson-img" src="../images/lesson-4-imgs/img-adaptive-1.png" alt="img-adaptive">
+                    <img class="col-11 col-md-8 lesson-img" src="../images/lesson-4-imgs/img-adaptive-1.png" alt="img-adaptive-desktop-look">
 
                     <p>
-                        На десктопных экранах эта картинка занимает всего 550 пикселей и 5 колонок в ширину. Но если вы будете просматривать эту страницу с телефона, то эта картинка растянется на все 12 колонок:
+                        На десктопных экранах эта картинка занимает всего 550 пикселей и 5 колонок в ширину. Но если вы будете просматривать эту страницу с телефона, то эта картинка растянется на всю ширину экрана:
                     </p>
 
-                    <img class="col-12 col-md-5 lesson-img" src="../images/lesson-4-imgs/img-adaptive-2.png" alt="img-adaptive">
+                    <img class="col-11 col-md-5 lesson-img" src="../images/lesson-4-imgs/img-adaptive-2.png" alt="img-adaptive-mobile-look">
 
                     <p>
                         На таком изменении количества колонок и строится адаптив bootstrap. Вы можете просто настроить сколько каждый элемент может занимать пространства, в зависимости от ширины. Вот как выглядит код, отвечающий за эту картинку:
@@ -73,17 +73,17 @@
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_1')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_1" class="language-html scroll">&ltimg class="col-12 col-md-5 lesson-img" src="../images/lesson-1-imgs/image1.png" alt="download-link">
+<pre><code id="listing_1" class="language-html scroll">&ltimg class="col-11 col-md-5 lesson-img" src="../images/lesson-1-imgs/image1.png" alt="download-link"&gt
 </code></pre>
                         </div> 
                     </div>
 
                     <p>
-                        Всё что было сделано - это установка элементу следующих классов: <code>col-12 col-md-5</code>. В этом примере всё построено следующим образом: Элемент всегда занимает 12 колонок ширины. Но при условии, когда ширина экрана больше, или равна md, то есть 768 пикселей, элемент занимает 5 колонок ширины.
+                        Всё что было сделано - это установка элементу следующих классов: <code>col-11 col-md-5</code>. В этом примере всё построено следующим образом: Элемент всегда занимает 11 колонок ширины. Но при условии, когда ширина экрана больше, или равна md, то есть 768 пикселей, элемент занимает 5 колонок ширины.
                     </p>
 
                     <p>
-                        Всё из за логики mobile first. В моём примере <code>col-12</code> - это стандартная ширина элемента, то есть ширина для мобильных устройств. и поэтому, мне пришлось добавить класс с контрольной точкой <code>col-md-5</code> для того, что бы на десктопных экранах этот элемент не был во всю ширину, потому что картинка на весь экран на мониторах смотрится менее красиво, занимает очень много пространства и сильно теряет качество.
+                        Всё из за логики mobile first. В моём примере <code>col-11</code> - это стандартная ширина элемента, то есть ширина для мобильных устройств. и поэтому, мне пришлось добавить класс с контрольной точкой <code>col-md-5</code> для того, что бы на десктопных экранах этот элемент не был во всю ширину, потому что картинка на весь экран на мониторах смотрится менее красиво, занимает очень много пространства и сильно теряет качество.
                     </p>
 
                     <p>Но иногда обычного выравнивания шириной бывает не достаточно. В таком случае в фреймворке bootstrap прописаны классы основных CSS свойств, таких как margin, padding и flex контейнеры, которые зачастую использутся при вёрстке, поэтому нет смысла увеличивать код лишними стилями, и можно воспользоваться тем, что предлагает bootstrap.</p>
@@ -101,7 +101,7 @@
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_2')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_2" class="language-html scroll">&ltdiv class="d-flex">I'm a flexbox container!&lt/div>
+<pre><code id="listing_2" class="language-html scroll">&ltdiv class="d-flex"&gtI'm a flexbox container!&lt/div&gt
 </code></pre>
                         </div> 
                     </div>
@@ -110,12 +110,12 @@
                         Ниже приведён результат исполнения кода, с добавлением некоторых стилей для большей наглядности. 
                     </p>
 
-                    <img class="col-12 col-md-5 lesson-img mb-5" src="../images/lesson-4-imgs/flex-1.png" alt="img-adaptive">
+                    <img class="col-11 col-md-5 lesson-img mb-5" src="../images/lesson-4-imgs/flex-1.png" alt="flex-container">
 
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_3')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_3" class="language-html scroll">&ltdiv class="d-inline-flex">I'm an inline flexbox container!&lt/div>
+<pre><code id="listing_3" class="language-html scroll">&ltdiv class="d-inline-flex"&gtI'm an inline flexbox container!&lt/div&gt
 </code></pre>
                         </div> 
                     </div>
@@ -124,7 +124,7 @@
                         Ниже приведён результат исполнения кода, с добавлением некоторых стилей для большей наглядности. 
                     </p>
 
-                    <img class="col-12 col-md-3 lesson-img" src="../images/lesson-4-imgs/flex-2.png" alt="img-adaptive">
+                    <img class="col-11 col-md-3 lesson-img" src="../images/lesson-4-imgs/flex-2.png" alt="inline-flex-container">
                     
                     <p>
                         Адаптивные варианты также существуют для <code>.d-flex</code> и <code>.d-inline-flex</code>:
@@ -176,17 +176,17 @@
                     <div class="listing-container col-10 m-auto">
                         <div class="col-12 text-end" onclick="copyFunc('listing_4')" id="copy-btn"><img class="d-inline copy-img" src="../images/copy-btn.svg" alt="copy-btn"></div>
                         <div class="code col-12 m-auto">
-<pre><code id="listing_4" class="language-html scroll">&ltdiv class="d-flex align-items-start flex-column mb-3" style="height: 200px;">
-    &ltdiv class="mb-auto p-2">Flex item&lt/div>
-    &ltdiv class="p-2">Flex item&lt/div>
-    &ltdiv class="p-2">Flex item&lt/div>
-&lt/div>
+<pre><code id="listing_4" class="language-html scroll">&ltdiv class="d-flex align-items-start flex-column mb-3" style="height: 200px;"&gt
+    &ltdiv class="mb-auto p-2"&gtFlex item&lt/div&gt
+    &ltdiv class="p-2"&gtFlex item&lt/div&gt
+    &ltdiv class="p-2"&gtFlex item&lt/div&gt
+&lt/div&gt
   
-&ltdiv class="d-flex align-items-end flex-column mb-3" style="height: 200px;">
-    &ltdiv class="p-2">Flex item&lt/div>
-    &ltdiv class="p-2">Flex item&lt/div>
-    &ltdiv class="mt-auto p-2">Flex item&lt/div>
-&lt/div>
+&ltdiv class="d-flex align-items-end flex-column mb-3" style="height: 200px;"&gt
+    &ltdiv class="p-2"&gtFlex item&lt/div&gt
+    &ltdiv class="p-2"&gtFlex item&lt/div&gt
+    &ltdiv class="mt-auto p-2"&gtFlex item&lt/div&gt
+&lt/div&gt
 </code></pre>
                         </div> 
                     </div>
@@ -195,7 +195,7 @@
                         Ниже приведён результат исполнения кода, с добавлением некоторых стилей для большей наглядности. 
                     </p>
 
-                    <img class="col-12 col-md-7 lesson-img mb-5" src="../images/lesson-4-imgs/flex-3.png" alt="img-adaptive">
+                    <img class="col-11 col-md-7 lesson-img mb-5" src="../images/lesson-4-imgs/flex-3.png" alt="multi-flex-example">
 
                     <p>
                         В данном примере используются классы <code>d-flex align-items-end flex-column</code> для выравнивания в первом контейнере, и <code>mb-3</code> для отступа между 1 и 2 контейнерами. Во втором контейнере используются аналогичные классы, отвечающие за выравнивание по правому краю.
