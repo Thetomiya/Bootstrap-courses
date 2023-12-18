@@ -58,7 +58,7 @@
                             <input type="radio" id="question-2-1" name="question-2"> <label for="question-2-1">Создаёт анимацию наведения</label>
                             <input type="radio" id="question-2-2" name="question-2"> <label for="question-2-2">Создаёт рамку таблицы</label>
                             <input type="radio" id="question-2-3" name="question-2"> <label for="question-2-3">Создаёт полоски на заднем фоне столбцов</label>
-                            <input type="radio" id="question-2-4" name="question-2"> <label for="question-2-4">Создаёт полоски на заднем фоне строчек</label>
+                            <input type="radio" id="question-2-4" name="question-2"> <label for="question-2-4">Создаёт полоски на заднем фоне строк</label>
                         </div>
                         <div class="question">
                             <h2 class="col-12 col-lg-6">Вопрос 3</h2>
@@ -69,17 +69,17 @@
                         <div class="question">
                             <h2 class="col-12 col-lg-6">Вопрос 4</h2>
                             <p>Какую ширину примет изображение с классом <code>.imd-fluid</code>, если ширина родительского контейнера 11 колонок?</p>
-                            <input type="radio" id="question-4-1" name="question-4"> <label for="question-4-1">11 колонок</label>
-                            <input type="radio" id="question-4-2" name="question-4"> <label for="question-4-2">12 колонок</label>
+                            <input type="radio" id="question-4-1" name="question-4"> <label for="question-4-1">11 колонок от родительской ширины</label>
+                            <input type="radio" id="question-4-2" name="question-4"> <label for="question-4-2">12 колонок от родительской ширины</label>
                             <input type="radio" id="question-4-3" name="question-4"> <label for="question-4-3">1 колонку</label>
                             <input type="radio" id="question-4-4" name="question-4"> <label for="question-4-4">Ширину всего экрана</label>
                         </div>
                         <div class="question">
                             <h2 class="col-12 col-lg-6">Вопрос 5</h2>
-                            <p>Существуют ли варианты класса <code>.img-fluid</code> с префиксами контрольных точек? </p>
-                            <input type="radio" id="question-5-1" name="question-5"> <label for="question-5-1">Существуют</label>
-                            <input type="radio" id="question-5-2" name="question-5"> <label for="question-5-2">Не существуют</label>
-                            <input type="radio" id="question-5-3" name="question-5"> <label for="question-5-3">Существуют для всех точек, кроме sm</label>
+                            <p>Какой класс выравинивает описание фигуры в 5 уроке по правому краю? </p>
+                            <input type="radio" id="question-5-1" name="question-5"> <label for="question-5-1"><code>.float-right</code></label>
+                            <input type="radio" id="question-5-2" name="question-5"> <label for="question-5-2"><code>.text-end</code></label>
+                            <input type="radio" id="question-5-3" name="question-5"> <label for="question-5-3"><code>.text-right</code></label>
                         </div>
 
                         <div class="lesson-btns col-12 col-lg-8 m-auto">
@@ -140,7 +140,7 @@
 
     <script>
         
-        const right_answers = ['1-1', '2-3', '3-3', '4-3', '5-1'];
+        const right_answers = ['1-1', '2-4', '3-2', '4-2', '5-2'];
         const questions_count = document.getElementsByClassName('question').length
         const button = document.getElementById('send')
         const answer_options = document.querySelectorAll('input[type="radio"]');
