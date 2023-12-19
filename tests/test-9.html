@@ -99,6 +99,7 @@
                             <div class="modal-content h-100 w-100">
                                 <div class="modal-body">
                                     <p id="inmodal-text" class="text-center mt-3"></p>
+                                    <p class="text-center">Критерии оценивания: <br>больше 2 ошибок: оценка 2,<br> 2 ошибки: оценка 3,<br>1 ошибка: оценка 4,<br>0 ошибок: оценка 5.</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" data-bs-dismiss="modal" class="hero-btn hero-btn-second inmodal-btn mb-3">Ок</button>
@@ -171,7 +172,7 @@
             } else if (right_answers_count == 5) {
                 mark = 5;
             }
-            result.textContent = "Ваш результат: " + right_answers_count + " правильных ответов из " + questions_count + ". Оценка: " + mark;
+            result.textContent = "Ваш результат: " + right_answers_count + " правильных(й) ответ(ов) из " + questions_count + ". Оценка: " + mark;
         });
         
     </script>
