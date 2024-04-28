@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы адаптивной верстки на Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/shortcut.svg" type="image/x-icon">
+</head>
+
+<body class="scroll">
+    <header>
+        <div class="container d-flex align-items-center justify-content-center h-100 p-0 m-auto">
+            <div class="fixed-top nav-fixed-bg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="col-1">
+                            <a href="index.html"><img src="images/logo2.svg" alt="logotype" class="logo-rotate"></a>
+                        </div>
+                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                                <a class="p-3 p-lg-0" href="index.html#lessons">Уроки</a>
+                                <a class="p-3 p-lg-0" href="tests.html">Тесты</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/docs/versions/">Документация</a>
+                                <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                                <div>
+                                    <span class="p-3 me-3 p-lg-0 theme-switcher"><img src="images/theme-btn.svg" alt="theme-btn"></span>
+                                    <a class="p-3 p-lg-0 profile-icon" href="login.html"><img src="images/profile-btn.svg" alt="profile-btn"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="profile-container">
+                    <h1 class="text-center changeable-text">Добро пожаловать в личный кабинет</h1>
+                    <h2 class="text-center changeable-text">Киценко Илья Владимирович</h2>
+
+                    <div class="profile-bg-container"></div>
+                    
+                    <h3 class="text-center mt-4 mb-5 changeable-text">Прогресс курса</h3>
+                    
+                    <div class="profile-cards-container mt-5 row">
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-1.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 2</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-2.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-3.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-1.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 2</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-2.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-3.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-1.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 2</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-2.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
+                                <p class="changeable-text">Тест 1</p>
+                                <div class="profile-card-stars">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-filled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                    <img src="images/profile/star-unfilled.svg" alt="star-flled">
+                                </div>
+                                <img src="images/profile/profile-test-img-3.svg" alt="test-related-img" class="test-related-img">
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="d-flex align-items-center footer">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-nav col-lg-3 d-flex flex-column">
+                    <p class="changeable-text">Bootstrap 5.3.2</p>
+                    <span ><a class="changeable-text" target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Документация</a></span>
+                    <span><a class="changeable-text" target="_blank" href="https://getbootstrap.com/docs/5.3/examples/">Примеры</a></span>
+                    <span><a class="changeable-text" target="_blank" href="https://icons.getbootstrap.com/">Иконки</a></span>
+                    <span><a class="changeable-text" target="_blank" href="https://themes.getbootstrap.com/">Темы</a></span>
+                    <span><a class="changeable-text" target="_blank" href="https://blog.getbootstrap.com/">Блог</a></span>
+                </div>
+
+                <div class="footer-nav col-lg-4 d-flex mt-5 mt-lg-0 flex-column">
+                    <p class="changeable-text">Автор</p>
+                    <span class="changeable-text">Киценко И. В.</span>
+                    <span class="changeable-text">Ilyakitsenko@proton.me</span>
+                    <span class="changeable-text">2023-2024</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

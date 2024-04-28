@@ -3,6 +3,9 @@
     --firstColor: #212529;
     --secondColor: #712CF9;
     --thirdColor: #2B3035;
+
+    --firstColotLight: #ffffff;
+    --thirdColorLight: #F8F9FA;
 }
 
 @font-face {
@@ -36,6 +39,7 @@ body {
     padding: 0;
     color: white;
     margin: 0;
+    transition: .3s;
 }
 
 .container {
@@ -79,9 +83,6 @@ a {
     transition: .4s;
 }
 
-a:hover {
-    scale: 1.01;
-}
 
 @media screen and (max-width: 500px) {
     h1 {
@@ -124,7 +125,7 @@ header a {
     color: rgba(255, 255, 255, 0.85);
 }
 
-header a:hover {
+header a:hover:not(:last-child) {
     scale: 1.02;
     color: rgba(255, 255, 255, 1);
 }
@@ -141,7 +142,7 @@ header nav {
 }
 
 .logo-rotate:hover {
-    transform: rotate(-10deg) scale(1.1);
+    transform: rotate(-45deg) scale(1.1);
 }
 
 
@@ -172,23 +173,59 @@ header nav {
     transition: .4s;
 }
 
+.hero-btn:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.hero-btn-first {
+    color: white; /* Цвет текста кнопки при тёмной теме */
+}
+
 .hero-btn-first:hover {
-    background-color: var(--firstColor);
+    color: rgb(255, 255, 255); /* Цвет текста при наведении на кнопку при тёмной теме */
 }
 
 .hero-btn-second {
-    background-color: var(--firstColor);
+    color: white; /* Цвет текста кнопки при тёмной теме */
+}
+
+/* Стили для светлой темы */
+body.light-theme .hero-btn-first {
+    color: rgb(255, 255, 255); /* Цвет текста кнопки при светлой теме */
+}
+
+body.light-theme .hero-btn-first:hover {
+    color: rgb(0, 0, 0); /* Цвет текста при наведении на кнопку при светлой теме */
+}
+
+body.light-theme .hero-btn-second {
+    color: rgb(0, 0, 0); /* Цвет текста кнопки при светлой теме */
+}
+
+/* Дополнительный стиль для кнопки heroBtnSecond */
+body.light-theme .hero-btn-second:hover {
+    color: rgb(255, 255, 255); /* Цвет текста при наведении на кнопку при светлой теме */
+}
+
+
+.hero-btn-second {
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .hero-btn-second:hover {
     background-color: var(--secondColor);
 }
 
+
 .hero-btn img {
     width: 20px;
     max-height: 20px;
     margin-right: 10px;
     margin-top: 0px;
+}
+
+main {
+    background-image: linear-gradient(180deg, rgba(33,37,41, 0.01), rgba(33,37,41, 0) 85%),radial-gradient(ellipse at top left, rgba(13,110,253, 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(225,228,132, 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(113,44,249, 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(214,51,132, 0.5), transparent 50%);
 }
 
 
@@ -209,6 +246,11 @@ header nav {
     border: 1px solid var(--secondColor);
     background: var(--secondColor);
     height: 500px;
+    transition: .8s;
+}
+
+.lesson-card:hover, .test-card:hover {
+    scale: 1.01;
 }
 
 .lesson-card img, .test-card img {
@@ -234,6 +276,7 @@ footer {
     margin-top: 200px;
     background: var(--thirdColor);
     height: 520px;
+    transition: .3s;
 }
 
 footer p {
@@ -378,7 +421,6 @@ button {
 .modal-content {
     background-color: #212529;
     border: 1px solid var(--secondColor);
-
 }
 
 .modal-body p {
@@ -393,4 +435,63 @@ button {
     width: 250px;
     min-width: 200px;
     margin: 0 auto;
+}
+
+
+/* Регистрация */
+
+.registration-container {
+    margin-top: 300px;
+}
+
+/* Профиль */
+
+.profile-container {
+    margin-top: 150px;
+}
+
+.profile-bg-container {
+    background-image: url(../images/profile/profile-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 40px;
+    height: 400px;
+}
+
+.profile-card {
+    border: 4px solid var(--secondColor);
+    border-radius: 20px;
+    height: 350px;
+}
+
+.profile-icon img {
+    transition: .3s;
+}
+
+.profile-icon img:hover {
+    scale: 1.1;
+}
+
+.test-related-img {
+    height: 211px;
+}
+
+.theme-switcher img {
+    cursor: pointer;
+    transform: rotate(270deg);
+    transition: .5s;
+}
+
+.theme-switcher img:hover {
+    scale: 1.1;
+}
+
+.theme-switcher.mirror-x img {
+
+    transform: rotate(90deg) ;
+}
+
+.changeable-text {
+    transition: .3s;
 }
