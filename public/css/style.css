@@ -1,0 +1,730 @@
+/* задаём цвета */
+:root {
+    --firstColor: #212529;
+    --secondColor: #712CF9;
+    --thirdColor: #2B3035;
+
+    --firstColotLight: #ffffff;
+    --thirdColorLight: #F8F9FA;
+}
+
+@font-face {
+    -webkit-font-family: 'Segoe UI', sans-serif;
+    -moz-font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    src: url(../fonts/SegoeUI.ttf);
+}
+
+/* общие стили */
+
+.scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: var(--thirdColor);
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--secondColor);
+}
+
+body {
+    background: var(--firstColor);
+    font-family: 'Segoe UI';
+    padding: 0;
+    color: white;
+    margin: 0;
+    transition: .3s;
+}
+
+.container {
+    max-width: 1320px;
+
+}
+
+a, p {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+ul li {
+    font-size: 24px;
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--secondColor);
+    margin-right: 10px;
+}
+
+a {
+    transition: .4s;
+}
+
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+
+/* шапка */
+.nav-fixed-bg {
+    height: 64px;
+    background: var(--secondColor);
+    padding-top: 2px;
+}
+
+.navbar-toggler-icon {
+    background: url(../images/burger-menu.svg);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+header a {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+header a:hover:not(:last-child) {
+    scale: 1.02;
+    color: rgba(255, 255, 255, 1);
+}
+
+header nav {
+    background: var(--secondColor);
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.logo-rotate {
+    transition: .4s;
+    height: 45px;
+}
+
+.logo-rotate:hover {
+    transform: rotate(-45deg) scale(1.1);
+}
+
+
+/* секция hero */
+.hero p {
+    opacity: 0.75;
+}
+
+.hero {
+    padding: 200px 0;
+}
+
+.hero p {
+    margin: 80px 0;
+}
+
+.hero a:hover {
+    opacity: 1;
+}
+
+.hero-btn {
+    height: 64px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: var(--secondColor);
+    border: 2px solid var(--secondColor);
+    transition: .4s;
+}
+
+.hero-btn:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.hero-btn-first {
+    color: white; /* Цвет текста кнопки при тёмной теме */
+}
+
+.hero-btn-first:hover {
+    color: rgb(255, 255, 255); /* Цвет текста при наведении на кнопку при тёмной теме */
+}
+
+.hero-btn-second {
+    color: white; /* Цвет текста кнопки при тёмной теме */
+}
+
+/* Стили для светлой темы */
+body.light-theme .hero-btn-first {
+    color: rgb(255, 255, 255); /* Цвет текста кнопки при светлой теме */
+}
+
+body.light-theme .hero-btn-first:hover {
+    color: rgb(0, 0, 0); /* Цвет текста при наведении на кнопку при светлой теме */
+}
+
+body.light-theme .hero-btn-second {
+    color: rgb(0, 0, 0); /* Цвет текста кнопки при светлой теме */
+}
+
+/* Дополнительный стиль для кнопки heroBtnSecond */
+body.light-theme .hero-btn-second:hover {
+    color: rgb(255, 255, 255); /* Цвет текста при наведении на кнопку при светлой теме */
+}
+
+
+.hero-btn-second {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.hero-btn-second:hover {
+    background-color: var(--secondColor);
+}
+
+
+.hero-btn img {
+    width: 20px;
+    max-height: 20px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+main {
+    background-image: linear-gradient(180deg, rgba(33,37,41, 0.01), rgba(33,37,41, 0) 85%),radial-gradient(ellipse at top left, rgba(13,110,253, 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(225,228,132, 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(113,44,249, 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(214,51,132, 0.5), transparent 50%);
+    padding-bottom: 200px;
+}
+
+
+/* секция уроков */
+
+.lessons h2, .tests h2 {
+    margin-bottom: 150px;
+}
+
+.lessons a, .tests a  {
+    padding: 0;
+    margin: 0 12px;
+    width: 416px;
+}
+
+.lesson-card, .test-card {
+    border-radius: 20px;
+    border: 1px solid var(--secondColor);
+    background: var(--secondColor);
+    height: 500px;
+    transition: .8s;
+}
+
+.lesson-card:hover, .test-card:hover {
+    scale: 1.01;
+}
+
+.lesson-card img, .test-card img {
+    max-width: 427px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+@media screen and (max-width: 430px) {
+    .lesson-card, .test-card {
+        height: 390px;
+    }
+
+    .lessons a, .tests a  {
+        padding: 0 12px;
+    }
+}
+
+
+/* подвал */
+
+footer {
+
+    background: var(--thirdColor);
+    height: 520px;
+    transition: .3s;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 32px;
+}
+
+footer span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 24px;
+}
+
+footer a {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+footer a:hover {
+    scale: 1.06;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/* Страница урока */
+
+.lesson h1, .test-section h1 {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.tests h1 {
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.lesson h2 {
+    margin: 70px 0 30px 0;
+}
+
+.lesson h3 {
+    margin: 70px 0 30px 0;
+}
+
+
+.lesson p {
+    margin: 30px 0;
+    text-align: justify;
+
+}
+
+.listing-container {
+    border-radius: 8px;
+    border: 2px solid #495057;
+    background: #1B1F22;
+    margin: 50px;
+}
+
+.code pre {
+    font-family: Consolas;
+    font-size: 20px;
+}
+
+.copy-img {
+    margin-top: 12px;
+    cursor: pointer;
+    width: 25px;
+}
+
+.lesson-btns {
+    padding: 150px 0;
+}
+
+.lesson-img {
+    border-radius: 8px;
+    border: 2px solid #495057;
+    margin: 40px auto;
+    padding: 0;
+    cursor: zoom-in;
+}
+
+.clickable-image {
+    cursor: zoom-in;
+}
+
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s;
+}
+.fullscreen-image.show {
+    visibility: visible;
+    opacity: 1;
+    cursor: zoom-out;
+}
+.fullscreen-image img {
+    min-width: 60%;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.example ul li {
+    font-size: 20px;
+}
+
+.example ul li::before {
+    content: "";
+    margin-right: 0px;
+}
+
+iframe {
+    resize: both;
+    min-width: 260px;
+    max-width: 100%;
+    min-height: 660px;
+    max-height: 1000px;
+}
+
+.accordion-item h2 {
+    margin: 0;
+}
+
+/* Страница тестирования */
+
+.question {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.text-question {
+    margin: 10px 0;
+    display: inline-block;
+    padding: 0px 15px;
+    line-height: 38px;
+    font-size: 22px;
+    border: 2px solid var(--secondColor);
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.question label {
+    margin: 10px 0;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+    line-height: 38px;
+    font-size: 22px;
+    border: 1px solid var(--secondColor);
+    border-radius: 6px;
+    user-select: none;
+    transition: background-color 0.4s, color 0.4s; /* Добавляем плавный переход для фона и цвета */
+}
+
+.question label:hover {
+    background-color: var(--secondColor); /* Изменяем фон при наведении */
+    color: white;
+}
+
+.question input[type=radio]:checked + label {
+    background-color: var(--secondColor); /* Фиксируем фон при выборе */
+    color: white;
+}
+
+/* Добавляем стили для активного состояния лейбла */
+.question input[type=radio]:active + label {
+    background-color: var(--secondColor); /* Изменяем фон при нажатии */
+    color: white;
+}
+
+button {
+    color: white;
+}
+
+.mark-modal {
+    max-width: 1000px !important;
+}
+
+.modal-content {
+    background-color: #212529;
+    border: 1px solid var(--secondColor);
+}
+
+.modal-body p {
+    font-size: 26px;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+.inmodal-btn {
+    width: 250px;
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+
+/* Регистрация */
+
+.registration-container {
+    margin-top: 300px;
+}
+
+/* Профиль */
+
+.profile-container {
+    margin-top: 150px;
+}
+
+.profile-edit-btn img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+.profile-edit-btn img:hover {
+    scale: 1.08;
+}
+
+.profile-form-btn {
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/profile/save-button.svg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transition: .5s;
+}
+
+.profile-form-btn:hover {
+    scale: 1.08;
+}
+
+#edit {
+    display: none;
+}
+
+.change-name-input[type="text"] {
+    font-size: 45px;
+    text-align: center;
+    padding: 0;
+    width: 65%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--secondColor);
+}
+
+.profile-bg-container {
+    background-image: url(../images/profile/profile-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 40px;
+    height: 400px;
+}
+
+.profile-card {
+    border: 4px solid var(--secondColor);
+    border-radius: 20px;
+    height: 350px;
+}
+
+.profile-icon img {
+    transition: .3s;
+}
+
+.logout-icon {
+    opacity: 0.7;
+    height: 30px;
+}
+
+.profile-icon img:hover {
+    scale: 1.1;
+}
+
+.test-related-img {
+    height: 211px;
+}
+
+.theme-switcher img {
+    cursor: pointer;
+    transition: .5s;
+}
+
+.theme-switcher img:hover {
+    scale: 1.1;
+}
+
+.theme-switcher.mirror-x img {
+    transform: rotate(180deg) ;
+}
+
+.changeable-text {
+    transition: .3s;
+}
+
+
+/*Игра "Пары"*/
+
+.game-wrap {
+    padding-top: 200px;
+    height: 90vh;
+    min-height: 500px;
+    padding-bottom: 20px;
+}
+
+.game {
+    /* добавляем трёхмерность для эффекта вращения */
+    transform-style: preserve-3d;
+    perspective: 500px;
+    min-height: 100%;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* стили карточек */
+.game-card {
+    float: left;
+    width: 16.66666%;
+    height: 25%;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    perspective: 500px;
+    position: relative;
+    cursor: pointer;
+    z-index: 50;
+}
+
+@media (max-width: 800px) {
+    .game-card {
+        width: 25%;
+        height: 16.666%;
+    }
+}
+
+/* обратная сторона карточки */
+.game-card .inside {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-style: preserve-3d;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+
+
+}
+
+/* общие настройки для обеих сторон карточки */
+.game-card .front, .game-card .back {
+    /* рисуем границу */
+    border: 2px solid var(--secondColor);
+    border-radius: 10px;
+    /* прячем обратную сторону */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* абсолютное позиционирование */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* размеры и отступ */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.game-card .front img, .game-card .back img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.game-card .front {
+    transform: rotateY(-180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* настройки при максимальной ширине экрана 800 пикселей */
+@media (max-width: 800px) {
+    .game-card .front {
+        padding: 5px;
+    }
+
+    .game-card .back {
+        padding: 10px;
+    }
+}
+
+/* запускаем анимацию переворачивания при клике на карточку */
+.game-card .inside.picked, .game-card .inside.matched {
+    transform: rotateY(180deg);
+}
+
+/* задаём ключевые кадры анимации совпадения */
+@keyframes matchAnim {
+    0% {
+        /*  зелёный фон */
+        background: #bcffcc;
+    }
+    100% {
+        /*  белый фон  */
+        background: white;
+    }
+}
+
+/* и делаем то же самое для движка WebKit */
+@-webkit-keyframes matchAnim {
+    0% {
+        background: #bcffcc;
+    }
+    100% {
+        background: white;
+    }
+}
+
+/* анимация совпадения пары */
+.game-card .inside.matched {
+    -webkit-animation: 1s matchAnim ease-in-out;
+    animation: 1s matchAnim ease-in-out;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.win-modal {
+    max-width: 500px;
+}
