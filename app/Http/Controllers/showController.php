@@ -28,6 +28,12 @@ class showController extends Controller
         return view('pairs', compact('pageTitle'));
     }
 
+    public function showEditor()
+    {
+        $pageTitle = 'Редактор кода';
+        return view('editor', compact('pageTitle'));
+    }
+
     public function showPracticeList()
     {
         $pageTitle = 'Практика';

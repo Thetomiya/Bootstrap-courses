@@ -25,12 +25,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
-                        <div class="navbar-nav col-lg-8 d-flex justify-content-between">
+                        <div class="navbar-nav col-lg-9 d-flex justify-content-between">
                             <a class="p-3 p-lg-0" href="{{ route('home') }}#lessons">Уроки</a>
                             <a class="p-3 p-lg-0" href="{{ route('testsList') }}">Тесты</a>
                             <a class="p-3 p-lg-0" href="{{ route('practiceList') }}">Практика</a>
                             <a class="p-3 p-lg-0" href="{{ route('game') }}">Интерактив</a>
-                            <a class="p-3 p-lg-0" target="_blank" href="https://getbootstrap.com/">Скачать Bootstrap</a>
+                            <a class="p-3 p-lg-0" href="{{ route('editor') }}">Редактор кода</a>
                             <div>
                                 <span class="p-3 me-3 p-lg-0 theme-switcher"><img src="{{ asset('images/theme-btn.svg') }}" alt="theme-btn"></span>
                                 <a class="p-3 p-lg-0 profile-icon" href="{{ route('profile') }}"><img src="{{ asset('images/profile-btn.svg') }}" alt="profile-btn"></a>

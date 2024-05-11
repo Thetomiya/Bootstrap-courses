@@ -24,6 +24,7 @@ Route::get('/tests', [\App\Http\Controllers\showController::class, 'showTestsLis
 Route::get('/pairs', [\App\Http\Controllers\showController::class, 'showGame'])->name('game');
 
 Route::get('/practice', [\App\Http\Controllers\showController::class, 'showPracticeList'])->name('practiceList');
+Route::get('/editor', [\App\Http\Controllers\showController::class, 'showEditor'])->name('editor');
 
 Route::get('/sign_in', [\App\Http\Controllers\showController::class, 'showLoginForm'])->name('login');
 Route::post('/sign_in', [\App\Http\Controllers\authController::class, 'login']);
