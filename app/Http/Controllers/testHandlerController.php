@@ -19,6 +19,7 @@ class testHandlerController extends Controller
 
 
 
+
         $rightAnswers = explode(" ", $rightAnswers);
         $userAnswer = [
             $request->input('question-1'),
@@ -41,7 +42,14 @@ class testHandlerController extends Controller
             $request->input('question-18'),
             $request->input('question-19'),
             $request->input('question-20'),
+
         ];
+        $userMultiAnswers = [
+            $request->input('question-21') ?? [],
+            $request->input('question-22') ?? [],
+            $request->input('question-23') ?? [],
+        ];
+
 
         $correctAnswers = 0;
         foreach ($rightAnswers as $rAnswer) {
@@ -54,11 +62,25 @@ class testHandlerController extends Controller
             }
         }
 
-        $mark = 1;
-        if (($correctAnswers >= 5) && ($correctAnswers < 10)) $mark = 2;
-        if (($correctAnswers >= 10) && ($correctAnswers < 14)) $mark = 3;
-        if (($correctAnswers >= 14) && ($correctAnswers < 18)) $mark = 4;
-        if ($correctAnswers >= 18) $mark = 5;
+
+        foreach ($rightAnswers as $rAnswer) {
+            foreach ($userMultiAnswers as $uMultiAnswer) {
+                sort($uMultiAnswer);
+                $uMultiAnswer = implode(',', $uMultiAnswer);
+
+
+                if ($rAnswer == $uMultiAnswer) {
+                    $correctAnswers = $correctAnswers + 1;
+                    break;
+                }
+            }
+        }
+
+
+        $mark = 2;
+        if (($correctAnswers >= 12) && ($correctAnswers < 17)) $mark = 3;
+        if (($correctAnswers >= 17) && ($correctAnswers < 21)) $mark = 4;
+        if ($correctAnswers >= 21) $mark = 5;
 
 
         $user = Auth::user();

@@ -56,7 +56,7 @@ class authController extends Controller
             return redirect()->route('profile');
         }
         return redirect()->route('login')->withErrors([
-            'error' => 'Не верная почта или пароль',
+            'error' => 'Неверная почта или пароль',
         ])->withInput();
     }
 }

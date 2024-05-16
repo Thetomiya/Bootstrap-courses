@@ -197,7 +197,7 @@
                             <div class="modal-body col-12">
                                 <p id="inmodal-text" class="text-center mt-3">Ваша оценка: {{ session('mark') }}</p>
                                 <p class="text-center">В прогресс курса засчитываются только лучшие попытки</p>
-                                <p class="text-center">Критерии оценивания: <br>Меньше 25% правильных ответов: оценка 1<br>25%-49%: оценка 2<br>50%-69%: оценка 3<br>70%-89%: оценка 4<br>90% и больше правильных ответов: оценка 5</p>
+                                <p class="text-center">Критерии оценивания по процентам правильных ответов: <br>0%-49%: оценка 2<br>50%-69%: оценка 3<br>70%-89%: оценка 4<br>90%-100: оценка 5</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" data-bs-dismiss="modal" class="hero-btn inmodal-btn mb-3">Ок</button>

@@ -9,7 +9,8 @@
 
                 <form action="" method="post" class="changeable-text">
                     @csrf
-                        <?=$testContent->test_block?>
+
+                    <?=$testContent->test_block?>
 
 
 

@@ -423,6 +423,10 @@ input[type=radio] {
     display: none;
 }
 
+input[type=checkbox] {
+    display: none;
+}
+
 .text-question {
     margin: 10px 0;
     display: inline-block;
@@ -432,6 +436,11 @@ input[type=radio] {
     border: 2px solid var(--secondColor);
     border-radius: 6px;
     transition: .3s;
+}
+
+.text-question:focus {
+    outline: none;
+    border: 2px solid var(--firstColor);
 }
 
 .question label {
@@ -459,6 +468,17 @@ input[type=radio] {
 
 /* Добавляем стили для активного состояния лейбла */
 .question input[type=radio]:active + label {
+    background-color: var(--secondColor); /* Изменяем фон при нажатии */
+    color: white;
+}
+
+.question input[type=checkbox]:checked + label {
+    background-color: var(--secondColor); /* Фиксируем фон при выборе */
+    color: white;
+}
+
+/* Добавляем стили для активного состояния лейбла */
+.question input[type=checkbox]:active + label {
     background-color: var(--secondColor); /* Изменяем фон при нажатии */
     color: white;
 }
@@ -542,6 +562,11 @@ button {
     height: 50px;
     border-radius: 10px;
     border: 1px solid var(--secondColor);
+}
+
+.change-name-input[type="text"]:focus {
+    outline: none;
+    border: 3px solid var(--secondColor);
 }
 
 .profile-bg-container {

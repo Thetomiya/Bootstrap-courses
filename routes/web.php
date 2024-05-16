@@ -32,6 +32,9 @@ Route::post('/sign_in', [\App\Http\Controllers\authController::class, 'login']);
 Route::get('/sign_up', [\App\Http\Controllers\showController::class, 'showRegistrationForm'])->name('registrationPage');
 Route::post('/sign_up', [\App\Http\Controllers\authController::class, 'registration']);
 
+Route::get('/lesson/{lesson}', [\App\Http\Controllers\showController::class, 'showLesson'])->name('lesson.show');
+Route::get('/practice/{practice}', [\App\Http\Controllers\showController::class, 'showPractice'])->name('practice.show');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', function () {
         \Illuminate\Support\Facades\Auth::logout();
@@ -41,8 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', [\App\Http\Controllers\showController::class, 'showProfile'])->name('profile');
     Route::post('/profile', \App\Http\Controllers\changeNameController::class);
 
-    Route::get('/lesson/{lesson}', [\App\Http\Controllers\showController::class, 'showLesson'])->name('lesson.show');
-    Route::get('/practice/{practice}', [\App\Http\Controllers\showController::class, 'showPractice'])->name('practice.show');
+
 
     Route::get('/tests/test/{testNum}', function ($testNum) {
         if ($testNum > 3) {
