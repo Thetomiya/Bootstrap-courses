@@ -18,6 +18,28 @@
         </div>
     </div>
 
+    <div class="modal fade" id="tutorial" tabindex="-1" data-bs-keyboard="false">
+        <div class="modal-dialog mark-modal">
+            <div class="modal-content h-100 w-100">
+                <div class="modal-body col-12">
+                    <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете опробовать интерактивную мини игру.</p>
+                    <p>В этой игре все карточки расположены рубашкой вниз. Вы должны выбрать две карточки. Если они одинаковые, они остаются открытыми, а если нет, они переворачиваются обратно. Цель игры - открыть все пары карточек</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="hero-btn inmodal-btn mb-3">Ок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myModal = new bootstrap.Modal(document.getElementById('tutorial'));
+            myModal.show();
+        });
+    </script>
+
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
 
 

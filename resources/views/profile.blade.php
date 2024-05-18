@@ -30,7 +30,7 @@
 
                 <div class="profile-bg-container"></div>
 
-                <h3 class="text-center mt-4 mb-5 changeable-text">Прогресс курса</h3>
+                <h3 class="text-center mt-4 mb-5 changeable-text">Прогресс</h3>
 
                 <div class="profile-cards-container mt-5 row">
                     <div class="col-12 col-md-6 col-lg-4 mb-4">

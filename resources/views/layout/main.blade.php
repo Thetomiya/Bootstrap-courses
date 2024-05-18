@@ -27,8 +27,8 @@
                     <div class="collapse navbar-collapse text-center lg-d-flex justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav col-lg-9 d-flex justify-content-between">
                             <a class="p-3 p-lg-0" href="{{ route('home') }}#lessons">Уроки</a>
-                            <a class="p-3 p-lg-0" href="{{ route('testsList') }}">Тесты</a>
                             <a class="p-3 p-lg-0" href="{{ route('practiceList') }}">Практика</a>
+                            <a class="p-3 p-lg-0" href="{{ route('testsList') }}">Тесты</a>
                             <a class="p-3 p-lg-0" href="{{ route('game') }}">Интерактив</a>
                             <a class="p-3 p-lg-0" href="{{ route('editor') }}">Редактор кода</a>
                             <div>

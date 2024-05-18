@@ -151,7 +151,7 @@ header nav {
 }
 
 .hero {
-    padding: 200px 0;
+    padding: 200px 0 300px 0;
 }
 
 .hero p {
@@ -238,25 +238,29 @@ main {
 .lessons a, .tests a  {
     padding: 0;
     margin: 0 12px;
-    width: 416px;
+    width: 346px;
 }
 
 .lesson-card, .test-card {
     border-radius: 20px;
     border: 1px solid var(--secondColor);
     background: var(--secondColor);
-    height: 500px;
-    transition: .8s;
+    height: 400px;
+    transition: .4s;
 }
 
 .lesson-card:hover, .test-card:hover {
-    scale: 1.01;
+    scale: 1.06;
 }
 
 .lesson-card img, .test-card img {
     max-width: 427px;
     width: 100%;
     border-radius: 20px;
+}
+
+.lesson-card h3, .test-card h3 {
+    padding: 0 5px;
 }
 
 
@@ -770,14 +774,11 @@ button {
 
 /*Страница редактора кода*/
 
-
-.editor-h1 {
-    padding-top: 200px;
+.editor-container {
+    padding-top: 150px;
 }
 
 #editor {
-    margin-top: 64px;
-    padding-top: 100px;
     height: 500px;
     float: left;
 }
@@ -785,9 +786,8 @@ button {
 #output {
     resize: both;
     border: 1px solid var(--secondColor);
-    height: 300px;
     min-width: 260px !important;
-    max-width: 90% !important;
-    min-height: 200px !important;
+    max-width: 50% !important;
+    min-height: 500px !important;
     max-height: 1000px !important;
 }

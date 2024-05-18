@@ -35,69 +35,69 @@
 
     <section class="lessons" id="lessons">
         <div class="container">
-            <div class="row d-flex justify-content-center justify-content-xxl-start changeable-text">
+            <div class="row d-flex justify-content-center changeable-text">
                 <h2 class="text-center changeable-text">Уроки</h2>
                 <h3 class="text-center mb-5">Модуль 1 </h3>
                 <a href="{{ route('lesson.show', 1) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 1 Введение и установка Bootstrap</h3>
+                        <h3 class="text-center pt-3">Урок 1 Введение и установка Bootstrap</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 2) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 2 На чём строится Bootstrap</h3>
+                        <h3 class="text-center pt-3">Урок 2 На чём строится Bootstrap</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 3) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 3 Столбцы и строки</h3>
+                        <h3 class="text-center pt-3">Урок 3 Столбцы и строки</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <h3 class="text-center my-5">Модуль 2 </h3>
                 <a href="{{ route('lesson.show', 4) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 4 Адаптивные колонки и flex-классы</h3>
+                        <h3 class="text-center pt-3">Урок 4 Адаптивные колонки и flex-классы</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 5) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 5 Изображения и таблицы </h3>
+                        <h3 class="text-center pt-3">Урок 5 Изображения и таблицы </h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 6) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center px-1 pt-5">Урок 6 Кнопки и формы</h3>
+                        <h3 class="text-center pt-3">Урок 6 Кнопки и формы</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <h3 class="text-center my-5">Модуль 3 </h3>
                 <a href="{{ route('lesson.show', 7) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 7 Навигация и пагинация</h3>
+                        <h3 class="text-center pt-3">Урок 7 Навигация и пагинация</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 8) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 8 Карусель и аккордионы</h3>
+                        <h3 class="text-center pt-3">Урок 8 Карусель и аккордионы</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <a href="{{ route('lesson.show', 9) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Урок 9 Карточки и модальные окна</h3>
+                        <h3 class="text-center pt-3">Урок 9 Карточки и модальные окна</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>
                 <h3 class="text-center my-5">Дополнение к курсу</h3>
                 <a href="{{ route('lesson.show', 10) }}" class="col-lg-4 col-md-6 col-sm-10 mb-5">
                     <div class="lesson-card d-flex flex-column justify-content-between align-items-center">
-                        <h3 class="text-center pt-5">Показательное занятие Вёрстка адаптивного лендинга</h3>
+                        <h3 class="text-center pt-3">Вёрстка адаптивного лендинга</h3>
                         <img src="{{ asset('images/less-1.svg') }}" alt="lesson-img">
                     </div>
                 </a>

@@ -34,6 +34,9 @@ Route::post('/sign_up', [\App\Http\Controllers\authController::class, 'registrat
 
 Route::get('/lesson/{lesson}', [\App\Http\Controllers\showController::class, 'showLesson'])->name('lesson.show');
 Route::get('/practice/{practice}', [\App\Http\Controllers\showController::class, 'showPractice'])->name('practice.show');
+Route::get('/landing-for-lesson-10', function () {
+    return view('landing-for-lesson-10/index');
+});
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', function () {
@@ -56,9 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tests/test/{testNum}', [\App\Http\Controllers\testHandlerController::class, 'testHandle']);
 
 
-    Route::get('/landing-for-lesson-10', function () {
-        return view('landing-for-lesson-10/index');
-    });
+
 });
 
 

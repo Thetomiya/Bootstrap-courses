@@ -3,9 +3,32 @@
 @section('content')
 
 
-    <div id="editor" class="col-12 "></div>
-    <h2 class="text-center changeable-text">Результат</h2>
+<div class="editor-container">
+    <div id="editor" class="col-12 col-lg-6"></div>
     <iframe id="output" class="col-lg-6 col-12 "></iframe>
+</div>
+
+
+<div class="modal fade" id="result" tabindex="-1" data-bs-keyboard="false">
+    <div class="modal-dialog mark-modal">
+        <div class="modal-content h-100 w-100">
+            <div class="modal-body col-12">
+                <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете попрактиковаться в использовании конструкций Bootstrap, описываемых в уроках. Весь написанный в левом окне код, отображается в правом окне в реальном времени</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-bs-dismiss="modal" class="hero-btn inmodal-btn mb-3">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var myModal = new bootstrap.Modal(document.getElementById('result'));
+        myModal.show();
+    });
+</script>
 
     <script src="{{ asset('js/ace.js') }}"></script>
     <script>
@@ -14,7 +37,8 @@
         editor.session.setMode("ace/mode/html");
 
         // Установите начальное значение для редактора
-        var initialCode = `<!DOCTYPE html>
+        var initialCode = `
+<!DOCTYPE html>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
@@ -36,7 +60,8 @@
         <div class="col-6">.col-6</div>
         <div class="col-6">.col-6</div>
     </div>
-</div>`;
+</div>
+`;
         editor.setValue(initialCode, 1); // 1 означает, что это начальное содержимое
 
         // Запишите начальный код в iframe
@@ -54,4 +79,6 @@
             document.getElementById('output').style.height = window.innerHeight + 'px';
         };
     </script>
+
+
 @endsection
