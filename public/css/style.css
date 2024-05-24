@@ -573,6 +573,12 @@ button {
     border: 3px solid var(--secondColor);
 }
 
+@media screen and (max-width: 500px) {
+    .change-name-input[type="text"] {
+        font-size: 25px;
+    }
+}
+
 .profile-bg-container {
     background-image: url(../images/profile/profile-bg.svg);
     background-repeat: no-repeat;
@@ -602,7 +608,11 @@ button {
 }
 
 .test-related-img {
-    height: 211px;
+    height: 190px;
+}
+
+.profile-card-stars img{
+    width: 18%;
 }
 
 .theme-switcher img {
@@ -656,10 +666,28 @@ button {
     z-index: 50;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1400px) {
     .game-card {
         width: 25%;
         height: 16.666%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .game-card {
+        width: 100%;
+        height: 100%;
+    }
+    .game {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .game-wrap {
+        height: 2000px ;
+
+        padding-bottom: 20px;
     }
 }
 
@@ -722,7 +750,7 @@ button {
 }
 
 /* настройки при максимальной ширине экрана 800 пикселей */
-@media (max-width: 800px) {
+@media (max-width: 1400px) {
     .game-card .front {
         padding: 5px;
     }
@@ -781,6 +809,7 @@ button {
 #editor {
     height: 500px;
     float: left;
+    font-size: 18px;
 }
 
 #output {
@@ -789,5 +818,12 @@ button {
     min-width: 260px !important;
     max-width: 50% !important;
     min-height: 500px !important;
-    max-height: 1000px !important;
+    max-height: 500px !important;
+}
+
+@media screen and (max-width: 992px) {
+    #output {
+        max-width: 100% !important;
+
+    }
 }

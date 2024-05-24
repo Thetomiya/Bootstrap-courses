@@ -13,7 +13,7 @@
     <div class="modal-dialog mark-modal">
         <div class="modal-content h-100 w-100">
             <div class="modal-body col-12">
-                <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете попрактиковаться в использовании конструкций Bootstrap, описываемых в уроках. Весь написанный в левом окне код, отображается в правом окне в реальном времени</p>
+                <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете попрактиковаться в использовании конструкций Bootstrap, описываемых в уроках.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" data-bs-dismiss="modal" class="hero-btn inmodal-btn mb-3">Ок</button>

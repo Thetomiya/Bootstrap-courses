@@ -2,28 +2,29 @@
 
 @section('content')
 
-    <div class="game-wrap">
-        <!-- блок с игрой -->
-        <div class="game"></div>
-        <!-- модальное окно, которое появится после сбора всех пар -->
-        <div class="modal fade" id="result" tabindex="-1" data-bs-keyboard="false">
-            <div class="modal-dialog win-modal">
-                <div class="modal-content py-5 h-100 w-100">
-                    <h2 class="text-center">Победа!</h2>
-                    <div class="modal-footer">
-                        <button type="button" data-bs-dismiss="modal" class="hero-btn restart inmodal-btn mb-3">Попробовать ещё раз</button>
-                    </div>
+    <div class="col-12">
+        <div class="game-wrap">
+            <!-- блок с игрой -->
+            <div class="game"></div>
+        </div>
+    </div>
+    <!-- модальное окно, которое появится после сбора всех пар -->
+    <div class="modal fade" id="result" tabindex="-1" data-bs-keyboard="false">
+        <div class="modal-dialog win-modal">
+            <div class="modal-content py-5 h-100 w-100">
+                <h2 class="text-center">Победа!</h2>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="hero-btn restart inmodal-btn mb-3">Попробовать ещё раз</button>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="tutorial" tabindex="-1" data-bs-keyboard="false">
         <div class="modal-dialog mark-modal">
             <div class="modal-content h-100 w-100">
                 <div class="modal-body col-12">
-                    <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете опробовать интерактивную мини игру.</p>
-                    <p>В этой игре все карточки расположены рубашкой вниз. Вы должны выбрать две карточки. Если они одинаковые, они остаются открытыми, а если нет, они переворачиваются обратно. Цель игры - открыть все пары карточек</p>
+                    <p id="inmodal-text" class="text-center mt-3">Это страница, где вы можете опробовать интерактивную мини-игру.</p>
+                    <p id="inmodal-text" class="text-center mt-3">Найдите все пары изученных классов</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-bs-dismiss="modal" class="hero-btn inmodal-btn mb-3">Ок</button>
@@ -189,62 +190,62 @@
             var cards = [
                 {
                     name: "bootstrap_logo",
-                    img: "images/game/Bootstrap_logo.svg",
+                    img: "images/game/1.png",
                     id: 1,
                 },
                 {
                     name: "3d_logo",
-                    img: "images/game/bootstrap-stack.webp",
+                    img: "images/game/2.png",
                     id: 2
                 },
                 {
                     name: "primary",
-                    img: "images/game/primary.png",
+                    img: "images/game/3.png",
                     id: 3
                 },
                 {
                     name: "success",
-                    img: "images/game/success.png",
+                    img: "images/game/4.png",
                     id: 4
                 },
                 {
                     name: "danger",
-                    img: "images/game/danger.png",
+                    img: "images/game/5.png",
                     id: 5
                 },
                 {
                     name: "warning",
-                    img: "images/game/warning.png",
+                    img: "images/game/6.png",
                     id: 6
                 },
                 {
                     name: "info",
-                    img: "images/game/info.png",
+                    img: "images/game/7.png",
                     id: 7
                 },
                 {
                     name: "bootstrap-3",
-                    img: "images/game/bootstrap-3.png",
+                    img: "images/game/8.png",
                     id: 8
                 },
                 {
                     name: "vs-code",
-                    img: "images/game/vs-code.svg",
+                    img: "images/game/9.png",
                     id: 9
                 },
                 {
                     name: "figma",
-                    img: "images/game/figma.png",
+                    img: "images/game/10.png",
                     id: 10
                 },
                 {
                     name: "xd",
-                    img: "images/game/xd.png",
+                    img: "images/game/11.png",
                     id: 11
                 },
                 {
                     name: "github",
-                    img: "images/game/github.png",
+                    img: "images/game/12.png",
                     id: 12
                 },
             ];

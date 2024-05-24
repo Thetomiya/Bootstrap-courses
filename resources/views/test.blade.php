@@ -37,7 +37,7 @@
             var $questions = $('.question');
 
             // Перемешиваем блоки с вопросами
-            $questions.each(function() {
+            $questions.each(function(index) {
                 var $this = $(this);
                 var $inputWraps = $this.find('.input-wrap');
 
@@ -49,6 +49,7 @@
                 // Очищаем блок вопроса, кроме input-wrap, и добавляем перемешанные input-wrap обратно
                 $this.find('.input-wrap').remove();
                 $inputWraps.appendTo($this);
+
             });
 
             // Перемешиваем блоки с вопросами
@@ -59,6 +60,13 @@
             // Очищаем родительский контейнер и добавляем перемешанные блоки обратно
             $('#parent-container').empty();
             $questions.appendTo('#parent-container');
+            $questions.each(function(index) {
+                var $this = $(this);
+
+
+                // Добавляем нумерацию каждому блоку с вопросами в виде <h2>
+                $this.prepend('<h4 class="question-number">' + (index + 1) + '/23</h4>');
+            });
         });
 
 
