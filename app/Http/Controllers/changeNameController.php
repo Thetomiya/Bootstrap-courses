@@ -18,7 +18,7 @@ class changeNameController extends Controller
             'edited-name.regex' => 'Поле "ФИО" должно содержать фамилию имя и отчество по примеру "Иванов Иван Иванович".',
         ];
         $data = $request->validate([
-            'edited-name' => 'required|string|regex:/^[А-Яа-яA-Za-z]{2,30}+\s[А-Яа-яA-Za-z]{2,30}+\s[А-Яа-яA-Za-z]{2,30}+$/u',
+            'edited-name' => 'required|string|regex:/^[А-Яа-яA-Za-z]{2,30}\s[А-Яа-яA-Za-z]{2,30}\s?[А-Яа-яA-Za-z]{2,30}?$/u',
         ], $messages);
         $user->full_name = $data['edited-name'];
         $user->save();

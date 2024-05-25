@@ -6,7 +6,7 @@
             <div class="row changeable-text">
                 <div class="col-lg-7 col-sm-12 hero-text ">
                     <h1 class="changeable-text">Основы адаптивной верстки на Bootstrap</h1>
-                    <p class="changeable-text">Bootstrap - это Мощный, расширяемый и многофункциональный фронтенд инструментарий, который
+                    <p class="changeable-text">Bootstrap - это мощный, расширяемый и многофункциональный фронтенд инструментарий, который
                         поможет вам создавать веб-сайты, выглядящие отлично на любых устройствах, от
                         компьютеров до смартфонов.</p>
 

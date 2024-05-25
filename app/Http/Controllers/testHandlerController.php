@@ -105,7 +105,11 @@ class testHandlerController extends Controller
 
             }
         }
-        return redirect('profile')->with('mark', $mark);
+
+        return redirect('profile')->with([
+            'mark' => $mark,
+            'answers' => $correctAnswers
+        ]);
 
     }
 }

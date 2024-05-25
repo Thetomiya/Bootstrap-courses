@@ -195,6 +195,7 @@
                     <div class="modal-dialog mark-modal">
                         <div class="modal-content h-100 w-100">
                             <div class="modal-body col-12">
+                                <p id="inmodal-text" class="text-center mt-3">Правильных ответов: {{ session('answers') }}</p>
                                 <p id="inmodal-text" class="text-center mt-3">Ваша оценка: {{ session('mark') }}</p>
                                 <p class="text-center">В прогресс курса засчитываются только лучшие попытки</p>
                                 <p class="text-center">Критерии оценивания по процентам правильных ответов: <br>0%-49%: оценка 2<br>50%-69%: оценка 3<br>70%-89%: оценка 4<br>90%-100: оценка 5</p>

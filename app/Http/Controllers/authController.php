@@ -27,7 +27,7 @@ class authController extends Controller
         ];
 
         $data = $request->validate([
-            'full_name' => 'required|string|regex:/^[А-Яа-яA-Za-z]{2,30}+\s[А-Яа-яA-Za-z]{2,30}+\s[А-Яа-яA-Za-z]{2,30}+$/u',
+            'full_name' => 'required|string|regex:/^[А-Яа-яA-Za-z]{2,30}\s[А-Яа-яA-Za-z]{2,30}\s?[А-Яа-яA-Za-z]{2,30}?$/u',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
             'passwordConfirm' => 'required|same:password',
