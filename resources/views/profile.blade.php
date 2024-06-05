@@ -32,7 +32,7 @@
 
                 <h3 class="text-center mt-4 mb-5 changeable-text">Прогресс</h3>
 
-                <div class="profile-cards-container mt-5 row">
+                <div class="profile-cards-container mt-5 d-flex justify-content-center row">
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="profile-card  text-center d-flex flex-column justify-content-between align-items-center">
                             <p class="changeable-text">Тест по модулю 1</p>

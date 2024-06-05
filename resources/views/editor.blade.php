@@ -23,6 +23,7 @@
 </div>
 </div>
 
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var myModal = new bootstrap.Modal(document.getElementById('result'));
@@ -40,6 +41,7 @@
         var initialCode = `
 <!DOCTYPE html>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Не забудьте подключить JS через CDN -->
 
 <style>
     div {
@@ -61,10 +63,19 @@
         <div class="col-6">.col-6</div>
     </div>
 </div>
+
+<div class="mt-5 text-center">
+    <button class="btn btn-primary col-md-3 col-12">btn-primary</button>
+    <button class="btn btn-secondary col-md-3 my-3 col-12">btn-secondary</button>
+    <button class="btn btn-success col-md-3 col-12">btn-success</button>
+    <button class="btn btn-warning col-md-3 my-3 col-12">btn-warning</button>
+    <button class="btn btn-danger col-md-3 col-12">btn-danger</button>
+</div>
+
 `;
         editor.setValue(initialCode, 1); // 1 означает, что это начальное содержимое
 
-        // Запишите начальный код в iframe
+        // начальный код в iframe
         document.getElementById('output').contentWindow.document.open();
         document.getElementById('output').contentWindow.document.write(initialCode);
         document.getElementById('output').contentWindow.document.close();
